@@ -3,10 +3,284 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的第二个网站</title>
+    <title>河北白云朵朵广告有限公司</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei", sans-serif;
+        }
+
+        /* 导航栏 */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            background: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 99;
+        }
+        .logo {
+            height: 50px;
+        }
+        .nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        .nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+        }
+        .nav ul li a:hover {
+            color: #0066cc;
+        }
+
+        /* 轮播Banner */
+        .banner {
+            width: 100%;
+            height: 500px;
+            position: relative;
+            overflow: hidden;
+        }
+        .banner-slide {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+        .banner-slide.active {
+            opacity: 1;
+        }
+        .banner-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .banner-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            text-align: center;
+            background: rgba(0,0,0,0.5);
+            padding: 20px 40px;
+            border-radius: 8px;
+        }
+        .banner-text h1 {
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+
+        /* 通用模块 */
+        .section {
+            padding: 60px 5%;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: 40px;
+            color: #222;
+        }
+
+        /* 关于我们 */
+        .about {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .about-logo {
+            width: 200px;
+        }
+        .about-text {
+            line-height: 1.8;
+            color: #444;
+        }
+
+        /* 业务板块 */
+        .business-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .business-card {
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+        .business-card:hover {
+            transform: translateY(-5px);
+        }
+        .business-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .business-card p {
+            padding: 15px;
+            text-align: center;
+            font-size: 18px;
+            font-weight: 500;
+            color: #222;
+        }
+
+        /* 联系我们 */
+        .contact {
+            background: #f5f7fa;
+            text-align: center;
+            padding: 50px 5%;
+        }
+        .contact p {
+            font-size: 18px;
+            margin: 10px 0;
+            color: #333;
+        }
+        .contact strong {
+            color: #0066cc;
+        }
+
+        /* 页脚 */
+        footer {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 25px 5%;
+        }
+
+        /* 响应式适配 */
+        @media (max-width: 768px) {
+            .nav ul {
+                gap: 15px;
+            }
+            .banner-text h1 {
+                font-size: 28px;
+            }
+            .about {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>欢迎来到 bydd 网站！</h1>
-    <p>这是我在 GitHub Pages 上的第二个独立网站。</p>
+    <!-- 导航栏 -->
+    <div class="header">
+        <img src="images/logo.png" alt="logo" class="logo">
+        <div class="nav">
+            <ul>
+                <li><a href="#">首页</a></li>
+                <li><a href="#about">关于我们</a></li>
+                <li><a href="#business">业务范围</a></li>
+                <li><a href="#contact">联系我们</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 轮播Banner -->
+    <div class="banner">
+        <div class="banner-slide active">
+            <img src="images/banner01.jpg" alt="banner01">
+            <div class="banner-text">
+                <h1>河北白云朵朵广告有限公司</h1>
+                <p>设计 · 制作 · 安装 · 一站式广告服务</p>
+            </div>
+        </div>
+        <div class="banner-slide">
+            <img src="images/banner02.jpg" alt="banner02">
+        </div>
+        <div class="banner-slide">
+            <img src="images/banner03.jpg" alt="banner03">
+        </div>
+        <div class="banner-slide">
+            <img src="images/banner04.jpg" alt="banner04">
+        </div>
+    </div>
+
+    <!-- 关于我们 -->
+    <div class="section" id="about">
+        <h2 class="section-title">关于我们</h2>
+        <div class="about">
+            <img src="images/logo.gif" alt="logo" class="about-logo">
+            <div class="about-text">
+                <p>河北白云朵朵广告有限公司，是一家集创意设计、广告制作、工程安装于一体的综合型广告企业。</p>
+                <p style="margin-top: 10px;">我们专注于门头招牌、LED显示屏、灯箱、文化墙、标识导视、宣传物料等服务，用心为每一位客户打造高品质、高性价比的广告解决方案。</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 业务范围 -->
+    <div class="section" style="background: #f8f8f8;" id="business">
+        <h2 class="section-title">业务范围</h2>
+        <div class="business-grid">
+            <div class="business-card">
+                <img src="images/led屏.jpg" alt="LED大屏工程">
+                <p>LED大屏工程</p>
+            </div>
+            <div class="business-card">
+                <img src="images/铝单板.jpg" alt="铝单板幕墙">
+                <p>铝单板幕墙/门头</p>
+            </div>
+            <div class="business-card">
+                <img src="images/门头店招.jpg" alt="品牌门头定制">
+                <p>品牌门头定制</p>
+            </div>
+            <div class="business-card">
+                <img src="images/党政文化.jpg" alt="党政文化墙建设">
+                <p>党政文化墙建设</p>
+            </div>
+            <div class="business-card">
+                <img src="images/幕墙.jpg" alt="幕墙工程">
+                <p>幕墙工程制作</p>
+            </div>
+            <div class="business-card">
+                <img src="images/室内灯箱.jpg" alt="室内灯箱/导视系统">
+                <p>室内灯箱/导视系统</p>
+            </div>
+            <div class="business-card">
+                <img src="images/校园文化.jpg" alt="校园文化打造">
+                <p>校园文化打造</p>
+            </div>
+            <div class="business-card">
+                <img src="images/标识导视.jpg" alt="标识导视系统">
+                <p>标识导视系统</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 联系我们 -->
+    <div class="contact" id="contact">
+        <h2 class="section-title">联系我们</h2>
+        <p><strong>公司名称：</strong>河北白云朵朵广告有限公司</p>
+        <p><strong>公司地址：</strong>衡水市和平路依云湾北门</p>
+        <p><strong>联系电话：</strong>15503189556（微信同号）</p>
+    </div>
+
+    <!-- 页脚 -->
+    <footer>
+        <p>© 2026 河北白云朵朵广告有限公司 版权所有</p>
+    </footer>
+
+    <!-- 轮播JS -->
+    <script>
+        const slides = document.querySelectorAll('.banner-slide');
+        let currentIndex = 0;
+        setInterval(() => {
+            slides[currentIndex].classList.remove('active');
+            currentIndex = (currentIndex + 1) % slides.length;
+            slides[currentIndex].classList.add('active');
+        }, 4000);
+    </script>
 </body>
 </html>
