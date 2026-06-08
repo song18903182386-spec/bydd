@@ -3,162 +3,762 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>河北白云朵朵广告有限公司 - 创意设计 · 工程落地 · 一体化广告解决方案</title>
+    <title>河北白云朵朵广告有限公司 - 24年广告工程与文化建设综合服务商</title>
     <style>
-        *{margin:0;padding:0;box-sizing:border-box;font-family:"Microsoft YaHei",sans-serif}
-        body{scroll-behavior:smooth}
-        
-        /* 导航栏 加入Logo */
-        .nav{position:fixed;top:0;left:0;width:100%;padding:15px 5%;display:flex;justify-content:space-between;align-items:center;background:rgba(0,0,0,0.6);z-index:999;transition:0.3s}
-        .nav.scroll{background:#111}
-        .nav-logo{height:50px;margin-right:15px}
-        .logo-text{color:#fff;font-size:20px;font-weight:bold}
-        .nav-left{display:flex;align-items:center}
-        .menu a{color:#fff;text-decoration:none;margin-left:28px;font-size:16px}
-        .menu a:hover{color:#0099ff}
-        
-        /* 首屏 */
-        .hero{width:100%;height:100vh;background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url('images/banner03.jpg') center/cover no-repeat;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;text-align:center}
-        /* 主标题 飘逸书法字体 */
-        .hero h1{
-            font-size:46px;
-            margin-bottom:15px;
-            animation:fadeUp 1s ease;
-            font-family:"华文行楷","STKaiti","KaiTi",cursive;
-            letter-spacing:4px;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei", sans-serif;
         }
-        .hero p{font-size:20px;margin-bottom:30px;animation:fadeUp 1.2s ease}
-        .btns a{padding:14px 32px;background:#0099ff;color:#fff;text-decoration:none;border-radius:5px;margin:0 8px;animation:fadeUp 1.4s ease}
-        .btns a.gray{background:#444}
-        @keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
-        
-        /* 模块标题 */
-        .title{text-align:center;font-size:32px;margin:80px 0 40px;color:#222}
-        
-        /* 业务6宫格 */
-        .business{max-width:1200px;margin:0 auto;padding:0 5%;display:grid;grid-template-columns:repeat(3,1fr);gap:25px;margin-bottom:80px}
-        .card{background:#fff;padding:30px 20px;border-radius:12px;box-shadow:0 5px 15px rgba(0,0,0,0.08);text-align:center;transition:0.3s}
-        .card:hover{transform:translateY(-8px);box-shadow:0 8px 20px rgba(0,0,0,0.15)}
-        .card h3{margin:15px 0 10px}
-        .card p{color:#666;line-height:1.6}
-        
-        /* 案例 */
-        .cases{max-width:1200px;margin:0 auto;padding:0 5%;display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:80px}
-        .case{border-radius:8px;overflow:hidden}
-        .case img{width:100%;height:220px;object-fit:cover;border-radius:8px}
-        .case p{text-align:center;margin-top:10px}
-        
-        /* 优势 */
-        .adv{max-width:1000px;margin:0 auto 80px;padding:0 5%;display:grid;grid-template-columns:repeat(4,1fr);gap:20px;text-align:center}
-        .adv-item h2{color:#0099ff;margin-bottom:8px}
-        
-        /* 关于我们 飘逸字体设置 */
-        .about{max-width:900px;margin:0 auto 80px;padding:0 5%;text-align:center;line-height:2;font-size:18px;color:#333;
-            font-family:"KaiTi","STKaiti","华文行楷",cursive;
+        body {
+            line-height: 1.8;
+            color: #333;
+            background-color: #f5f6f8;
+            scroll-behavior: smooth;
         }
-        
+        ul {
+            list-style: none;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .section {
+            padding: 80px 0;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 32px;
+            color: #0a3474;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+        .section-sub {
+            text-align: center;
+            color: #666;
+            font-size: 16px;
+            margin-bottom: 50px;
+        }
+
+        /* 顶部导航 */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 999;
+            transition: background 0.3s ease;
+            padding: 15px 0;
+        }
+        .header.bg-dark {
+            background-color: #0a3474;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+        }
+        .nav-wrap {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        .logo img {
+            height: 45px;
+            margin-right: 12px;
+        }
+        .logo-text {
+            color: #fff;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .nav-menu {
+            display: flex;
+        }
+        .nav-menu li {
+            margin-left: 35px;
+        }
+        .nav-menu a {
+            color: #fff;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+        .nav-menu a:hover {
+            color: #ff7d00;
+        }
+
+        /* 首屏轮播 */
+        .hero {
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+        .hero-slide.active {
+            opacity: 1;
+        }
+        .hero-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .hero-mask {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 52, 116, 0.65);
+        }
+        .hero-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: #fff;
+            width: 90%;
+        }
+        .hero-title {
+            font-size: 52px;
+            font-family: "华文行楷", "STKaiti", cursive;
+            letter-spacing: 6px;
+            margin-bottom: 20px;
+            animation: fadeUp 1s ease;
+        }
+        .hero-sub {
+            font-size: 22px;
+            margin-bottom: 15px;
+            opacity: 0.9;
+            animation: fadeUp 1.2s ease;
+        }
+        .hero-desc {
+            max-width: 800px;
+            margin: 0 auto 35px;
+            font-size: 17px;
+            line-height: 2;
+            animation: fadeUp 1.4s ease;
+        }
+        .hero-btn {
+            animation: fadeUp 1.6s ease;
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 32px;
+            border-radius: 4px;
+            font-size: 16px;
+            margin: 0 10px;
+            transition: all 0.3s;
+        }
+        .btn-orange {
+            background: #ff7d00;
+            color: #fff;
+        }
+        .btn-orange:hover {
+            background: #e06f00;
+        }
+        .btn-white {
+            background: transparent;
+            color: #fff;
+            border: 1px solid #fff;
+        }
+        .btn-white:hover {
+            background: #fff;
+            color: #0a3474;
+        }
+        @keyframes fadeUp {
+            from {opacity: 0; transform: translateY(30px);}
+            to {opacity: 1; transform: translateY(0);}
+        }
+
+        /* 九宫格服务 */
+        .service {
+            background: #fff;
+        }
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+        .service-card {
+            background: #f8f9fa;
+            padding: 30px 20px;
+            text-align: center;
+            border-radius: 8px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .service-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 8px 20px rgba(10,52,116,0.12);
+        }
+        .service-card h3 {
+            color: #0a3474;
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+        .service-card p {
+            color: #555;
+            font-size: 15px;
+        }
+
+        /* 案例展示 */
+        .case-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        .case-item {
+            border-radius: 8px;
+            overflow: hidden;
+            background: #fff;
+        }
+        .case-item img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            transition: transform 0.4s;
+        }
+        .case-item:hover img {
+            transform: scale(1.05);
+        }
+        .case-txt {
+            padding: 15px;
+            text-align: center;
+        }
+        .case-txt h4 {
+            color: #0a3474;
+            margin-bottom: 5px;
+        }
+
+        /* 关于我们 */
+        .about {
+            background: #fff;
+        }
+        .about-wrap {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+        .about-text p {
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+        .about-img img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        /* 发展历程 */
+        .history {
+            background: #0a3474;
+            color: #fff;
+        }
+        .history .section-title {
+            color: #fff;
+        }
+        .history-line {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            position: relative;
+            margin-top: 60px;
+        }
+        .history-item {
+            text-align: center;
+            flex: 1;
+            min-width: 120px;
+        }
+        .history-year {
+            font-size: 22px;
+            font-weight: bold;
+            color: #ff7d00;
+            margin-bottom: 8px;
+        }
+
+        /* 企业优势 */
+        .advantage-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        .adv-item {
+            background: #fff;
+            padding: 30px 20px;
+            text-align: center;
+            border-radius: 8px;
+        }
+        .adv-num {
+            font-size: 36px;
+            color: #ff7d00;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .adv-item h4 {
+            color: #0a3474;
+            font-size: 18px;
+        }
+
+        /* 合作流程 */
+        .process {
+            background: #fff;
+        }
+        .process-wrap {
+            display: flex;
+            justify-content: space-between;
+        }
+        .process-item {
+            text-align: center;
+            flex: 1;
+            position: relative;
+        }
+        .process-item:not(:last-child)::after {
+            content: "→";
+            position: absolute;
+            right: -15px;
+            top: 20px;
+            font-size: 24px;
+            color: #0a3474;
+        }
+        .process-item p {
+            color: #0a3474;
+            font-weight: 500;
+        }
+
         /* 联系我们 */
-        .contact{background:#111;color:#fff;padding:60px 5%;text-align:center}
-        .contact p{margin:10px 0;font-size:18px}
-        .contact strong{color:#0099ff}
-        
+        .contact {
+            background: #0a3474;
+            color: #fff;
+        }
+        .contact .section-title {
+            color: #fff;
+        }
+        .contact-wrap {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+        .contact-info p {
+            font-size: 17px;
+            margin: 15px 0;
+        }
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 4px;
+            font-size: 15px;
+        }
+        .contact-form button {
+            background: #ff7d00;
+            color: #fff;
+            border: none;
+            padding: 12px 30px;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
         /* 页脚 */
-        .footer{background:#000;color:#aaa;padding:25px;text-align:center;font-size:14px}
-        
-        /* 响应式适配 */
-        @media(max-width:768px){
-            .business,.cases,.adv{grid-template-columns:repeat(1,1fr)}
-            .hero h1{font-size:30px}
-            .menu a{margin-left:12px;font-size:14px}
-            .nav-logo{height:40px}
-            .logo-text{font-size:16px}
+        .footer {
+            background: #052048;
+            color: #ccc;
+            padding: 50px 0 20px;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        .footer-col h4 {
+            color: #fff;
+            font-size: 18px;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #204075;
+        }
+        .footer-col li {
+            margin: 8px 0;
+        }
+        .footer-col a:hover {
+            color: #ff7d00;
+        }
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #204075;
+            font-size: 14px;
+        }
+
+        /* 移动端适配 */
+        @media (max-width: 768px) {
+            .nav-menu {display: none;}
+            .hero-title {font-size: 32px; letter-spacing: 2px;}
+            .service-grid, .case-grid, .advantage-grid, .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            .about-wrap, .contact-wrap {
+                grid-template-columns: 1fr;
+            }
+            .process-wrap {
+                flex-wrap: wrap;
+            }
+            .process-item {
+                flex: none;
+                width: 50%;
+                margin-bottom: 20px;
+            }
         }
     </style>
 </head>
-
 <body>
-
-    <!-- 导航栏：左侧Logo + 公司全称 -->
-    <div class="nav" id="nav">
-        <div class="nav-left">
-            <img src="images/logo.png" alt="公司标识" class="nav-logo">
-            <div class="logo-text">河北白云朵朵广告有限公司</div>
+    <!-- 顶部导航 -->
+    <header class="header" id="header">
+        <div class="container nav-wrap">
+            <div class="logo">
+                <img src="images/logo.png" alt="河北白云朵朵广告有限公司">
+                <div class="logo-text">河北白云朵朵广告有限公司</div>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">首页</a></li>
+                <li><a href="#service">核心服务</a></li>
+                <li><a href="#case">工程案例</a></li>
+                <li><a href="#about">关于我们</a></li>
+                <li><a href="#history">发展历程</a></li>
+                <li><a href="#contact">联系我们</a></li>
+            </ul>
         </div>
-        <div class="menu">
-            <a href="#home">首页</a>
-            <a href="#business">服务项目</a>
-            <a href="#cases">工程案例</a>
-            <a href="#about">关于我们</a>
-            <a href="#contact">联系我们</a>
+    </header>
+
+    <!-- 首屏主视觉轮播 -->
+    <section class="hero" id="home">
+        <div class="hero-slide active">
+            <img src="images/banner01.jpg" alt="工程案例">
         </div>
-    </div>
-
-    <!-- 首屏 -->
-    <div class="hero" id="home">
-        <h1>创意无限 · 传播有道 · 价值共赢</h1>
-        <p>一站式广告标识与工程解决方案服务商</p>
-        <div class="btns">
-            <a href="#contact">获取报价</a>
-            <a href="#cases" class="gray">查看案例</a>
+        <div class="hero-slide">
+            <img src="images/banner02.jpg" alt="工程案例">
         </div>
-    </div>
+        <div class="hero-slide">
+            <img src="images/banner03.jpg" alt="工程案例">
+        </div>
+        <div class="hero-slide">
+            <img src="images/banner04.jpg" alt="工程案例">
+        </div>
+        <div class="hero-mask"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">创意无限 · 传播有道 · 价值共赢</h1>
+            <p class="hero-sub">始于2002 · 专注广告行业24年</p>
+            <p class="hero-desc">
+                河北白云朵朵广告有限公司前身为白云雕刻，2017年正式注册成立。二十余年来深耕广告工程与文化建设领域，为政府、学校、医院、企事业单位及商业客户提供设计、制作、施工一体化服务。
+            </p>
+            <div class="hero-btn">
+                <a href="#case" class="btn btn-orange">查看案例</a>
+                <a href="#contact" class="btn btn-white">联系我们</a>
+            </div>
+        </div>
+    </section>
 
-    <!-- 业务板块 -->
-    <h2 class="title" id="business">我们的业务</h2>
-    <div class="business">
-        <div class="card"><h3>门头店招设计制作</h3><p>发光字、铝单板、品牌门头一站式落地</p></div>
-        <div class="card"><h3>LED显示屏工程</h3><p>室内外全彩屏、单色屏设计安装维修</p></div>
-        <div class="card"><h3>灯箱广告工程</h3><p>软膜灯箱、卡布灯箱、超薄灯箱制作</p></div>
-        <div class="card"><h3>铝单板幕墙工程</h3><p>外墙幕墙、装饰工程、结构施工一体化</p></div>
-        <div class="card"><h3>标识导视系统</h3><p>园区、商场、楼层、科室、指示牌</p></div>
-        <div class="card"><h3>品牌视觉设计</h3><p>LOGO、VI、宣传物料、文化墙设计</p></div>
-    </div>
+    <!-- 核心服务领域 九宫格 -->
+    <section class="section service" id="service">
+        <div class="container">
+            <h2 class="section-title">我们能为您做什么</h2>
+            <div class="service-grid">
+                <div class="service-card">
+                    <h3>广告标识工程</h3>
+                    <p>门头招牌、发光字、灯箱广告、精神堡垒、标识标牌</p>
+                </div>
+                <div class="service-card">
+                    <h3>LED显示工程</h3>
+                    <p>室内外LED显示屏、会议显示系统、异形显示屏</p>
+                </div>
+                <div class="service-card">
+                    <h3>铝单板工程</h3>
+                    <p>氟碳铝单板、金属装饰工程、商业外立面</p>
+                </div>
+                <div class="service-card">
+                    <h3>幕墙工程</h3>
+                    <p>玻璃幕墙、铝板幕墙、建筑外立面改造</p>
+                </div>
+                <div class="service-card">
+                    <h3>标识导视系统</h3>
+                    <p>学校、医院、园区、商业综合体导视系统</p>
+                </div>
+                <div class="service-card">
+                    <h3>校园文化建设</h3>
+                    <p>校园文化墙、校史馆、宣传栏、文化长廊</p>
+                </div>
+                <div class="service-card">
+                    <h3>党建文化建设</h3>
+                    <p>党建展厅、党建文化墙、党员活动室</p>
+                </div>
+                <div class="service-card">
+                    <h3>企业文化建设</h3>
+                    <p>企业展厅、荣誉室、文化墙、形象展示空间</p>
+                </div>
+                <div class="service-card">
+                    <h3>宣传物料设计制作</h3>
+                    <p>宣传册、折页、海报、包装设计、活动物料</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <!-- 工程案例 -->
-    <h2 class="title" id="cases">经典工程案例</h2>
-    <div class="cases">
-        <div class="case"><img src="images/门头店招.jpg"><p>品牌门头定制</p></div>
-        <div class="case"><img src="images/led屏.jpg"><p>LED大屏工程</p></div>
-        <div class="case"><img src="images/铝单板.jpg"><p>幕墙工程</p></div>
-        <div class="case"><img src="images/室内灯箱.jpg"><p>室内灯箱系统</p></div>
-        <div class="case"><img src="images/党政文化.jpg"><p>党政文化墙</p></div>
-        <div class="case"><img src="images/校园文化.jpg"><p>校园文化建设</p></div>
-    </div>
+    <!-- 精选工程案例 -->
+    <section class="section" id="case">
+        <div class="container">
+            <h2 class="section-title">案例见证实力</h2>
+            <p class="section-sub">每一个项目，都是客户的信任与认可</p>
+            <div class="case-grid">
+                <div class="case-item">
+                    <img src="images/门头店招.jpg" alt="广告工程">
+                    <div class="case-txt">
+                        <h4>广告标识工程</h4>
+                        <p>品牌门头、招牌定制</p>
+                    </div>
+                </div>
+                <div class="case-item">
+                    <img src="images/led屏.jpg" alt="LED工程">
+                    <div class="case-txt">
+                        <h4>LED显示工程</h4>
+                        <p>全彩大屏设计施工</p>
+                    </div>
+                </div>
+                <div class="case-item">
+                    <img src="images/校园文化.jpg" alt="校园文化">
+                    <div class="case-txt">
+                        <h4>校园文化建设</h4>
+                        <p>文化墙、长廊打造</p>
+                    </div>
+                </div>
+                <div class="case-item">
+                    <img src="images/党政文化.jpg" alt="党建文化">
+                    <div class="case-txt">
+                        <h4>党建文化建设</h4>
+                        <p>党建展厅、文化墙</p>
+                    </div>
+                </div>
+                <div class="case-item">
+                    <img src="images/铝单板.jpg" alt="铝单板工程">
+                    <div class="case-txt">
+                        <h4>铝单板工程</h4>
+                        <p>外立面装饰工程</p>
+                    </div>
+                </div>
+                <div class="case-item">
+                    <img src="images/室内灯箱.jpg" alt="幕墙工程">
+                    <div class="case-txt">
+                        <h4>幕墙与灯箱工程</h4>
+                        <p>室内外亮化展示</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <!-- 公司优势 -->
-    <h2 class="title">为什么选择我们</h2>
-    <div class="adv">
-        <div class="adv-item"><h2>10+年</h2><p>行业经验</p></div>
-        <div class="adv-item"><h2>一体化</h2><p>设计施工落地</p></div>
-        <div class="adv-item"><h2>高品质</h2><p>工程质量保障</p></div>
-        <div class="adv-item"><h2>全服务</h2><p>售后无忧</p></div>
-    </div>
+    <!-- 关于我们 -->
+    <section class="section about" id="about">
+        <div class="container">
+            <h2 class="section-title">二十四年专注品质服务</h2>
+            <div class="about-wrap">
+                <div class="about-text">
+                    <p>河北白云朵朵广告有限公司的发展可追溯至2002年创立的白云雕刻。</p>
+                    <p>从最初的广告制作与雕刻加工，到今天覆盖广告工程、文化建设、品牌传播等多个领域，我们始终坚持创意与品质并重，设计与落地同行。</p>
+                    <p>公司现已形成设计策划、生产制作、工程施工及售后服务一体化服务体系，能够为客户提供完整、高效、专业的解决方案。</p>
+                    <p>服务对象涵盖政府机关、学校、医院、企事业单位及商业客户。</p>
+                </div>
+                <div class="about-img">
+                    <img src="images/logo.gif" alt="公司实景">
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <!-- 关于我们（文化文案 飘逸字体） -->
-    <h2 class="title" id="about">关于我们</h2>
-    <div class="about">
-        河北白云朵朵广告有限公司是一家集创意设计、广告制作、工程施工、安装维护于一体的综合型广告工程企业。<br>
-        我们专注于门头招牌、LED显示屏、灯箱、幕墙、标识导视、文化建设等全品类广告服务，<br>
-        为各类客户提供从创意到落地的一站式解决方案。用专业创造价值，用品质赢得信任。
-    </div>
+    <!-- 发展历程 -->
+    <section class="section history" id="history">
+        <div class="container">
+            <h2 class="section-title">发展历程</h2>
+            <div class="history-line">
+                <div class="history-item">
+                    <div class="history-year">2002</div>
+                    <p>白云雕刻创立</p>
+                </div>
+                <div class="history-item">
+                    <div class="history-year">2008</div>
+                    <p>拓展广告标识工程</p>
+                </div>
+                <div class="history-item">
+                    <div class="history-year">2013</div>
+                    <p>进军LED工程领域</p>
+                </div>
+                <div class="history-item">
+                    <div class="history-year">2017</div>
+                    <p>正式注册成立公司</p>
+                </div>
+                <div class="history-item">
+                    <div class="history-year">2019</div>
+                    <p>开展校园文化业务</p>
+                </div>
+                <div class="history-item">
+                    <div class="history-year">2021</div>
+                    <p>开展党建文化业务</p>
+                </div>
+                <div class="history-item">
+                    <div class="history-year">2023</div>
+                    <p>拓展企业文化展厅</p>
+                </div>
+                <div class="history-item">
+                    <div class="history-year">2026</div>
+                    <p>综合服务体系成型</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 企业优势 -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">为什么选择我们</h2>
+            <div class="advantage-grid">
+                <div class="adv-item">
+                    <div class="adv-num">24年</div>
+                    <h4>深耕行业经验</h4>
+                </div>
+                <div class="adv-item">
+                    <div class="adv-num">一体化</div>
+                    <h4>设计+制作+施工</h4>
+                </div>
+                <div class="adv-item">
+                    <div class="adv-num">全品类</div>
+                    <h4>多行业项目经验</h4>
+                </div>
+                <div class="adv-item">
+                    <div class="adv-num">专业团队</div>
+                    <h4>严格质量管控</h4>
+                </div>
+                <div class="adv-item">
+                    <div class="adv-num">高效率</div>
+                    <h4>快速响应执行</h4>
+                </div>
+                <div class="adv-item">
+                    <div class="adv-num">重信誉</div>
+                    <h4>长期合作服务</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 合作流程 -->
+    <section class="section process">
+        <div class="container">
+            <h2 class="section-title">合作流程</h2>
+            <div class="process-wrap">
+                <div class="process-item"><p>需求沟通</p></div>
+                <div class="process-item"><p>现场勘察</p></div>
+                <div class="process-item"><p>方案设计</p></div>
+                <div class="process-item"><p>预算报价</p></div>
+                <div class="process-item"><p>制作施工</p></div>
+                <div class="process-item"><p>验收交付</p></div>
+                <div class="process-item"><p>售后服务</p></div>
+            </div>
+        </div>
+    </section>
 
     <!-- 联系我们 -->
-    <div class="contact" id="contact">
-        <h2 style="margin-bottom:25px">联系我们</h2>
-        <p><strong>公司名称：</strong>河北白云朵朵广告有限公司</p>
-        <p><strong>公司地址：</strong>衡水市和平路依云湾北门</p>
-        <p><strong>联系电话：</strong>15503189556（微信同号）</p>
-    </div>
+    <section class="section contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">期待与您合作</h2>
+            <div class="contact-wrap">
+                <div class="contact-info">
+                    <p><strong>公司名称：</strong>河北白云朵朵广告有限公司</p>
+                    <p><strong>联系电话：</strong>15503189556（微信同号）</p>
+                    <p><strong>公司地址：</strong>衡水市和平路依云湾北门</p>
+                </div>
+                <div class="contact-form">
+                    <input type="text" placeholder="您的姓名">
+                    <input type="text" placeholder="联系电话">
+                    <input type="text" placeholder="项目类型">
+                    <textarea rows="4" placeholder="留言内容"></textarea>
+                    <button>立即咨询</button>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- 页脚 -->
-    <div class="footer">© 2026 河北白云朵朵广告有限公司 版权所有</div>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>公司简介</h4>
+                    <p>24年广告工程、文化建设综合服务商，设计制作施工一站式服务。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>服务项目</h4>
+                    <ul>
+                        <li><a href="#">广告标识工程</a></li>
+                        <li><a href="#">LED显示工程</a></li>
+                        <li><a href="#">文化建设工程</a></li>
+                        <li><a href="#">幕墙铝单板工程</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>案例中心</h4>
+                    <ul>
+                        <li><a href="#">广告工程案例</a></li>
+                        <li><a href="#">文化建设案例</a></li>
+                        <li><a href="#">LED大屏案例</a></li>
+                        <li><a href="#">外立面工程案例</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系方式</h4>
+                    <ul>
+                        <li>电话：15503189556</li>
+                        <li>地址：衡水市和平路依云湾北门</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                © 2026 河北白云朵朵广告有限公司 版权所有 | 网站备案号：待填写
+            </div>
+        </div>
+    </footer>
 
     <script>
-        // 导航滚动切换背景
-        window.addEventListener('scroll',()=>{
-            document.getElementById('nav').classList.toggle('scroll',window.scrollY>50)
-        })
-    </script>
+        // 导航滚动变色
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', function(){
+            if(window.scrollY > 50){
+                header.classList.add('bg-dark');
+            }else{
+                header.classList.remove('bg-dark');
+            }
+        });
 
+        // 首屏轮播
+        const slides = document.querySelectorAll('.hero-slide');
+        let slideIndex = 0;
+        setInterval(function(){
+            slides[slideIndex].classList.remove('active');
+            slideIndex = (slideIndex + 1) % slides.length;
+            slides[slideIndex].classList.add('active');
+        }, 4000);
+    </script>
 </body>
 </html>
