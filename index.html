@@ -1,16 +1,11 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <!-- 网站编码 不要动 -->
     <meta charset="UTF-8">
-    <!-- 手机适配 不要动 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- 浏览器标题 可改：这里改网站名字 -->
     <title>河北白云朵朵广告有限公司 - 24年工程、文化建设综合服务商</title>
     
     <style>
-        /* ====================== 全局基础样式 ====================== */
-        /* 全网站默认样式 不要动 */
         * {
             margin: 0;
             padding: 0;
@@ -30,7 +25,6 @@
         .section-title { text-align: center; font-size: 32px; color: #0a3474; margin-bottom: 12px; font-weight: 600; }
         .section-sub { text-align: center; color: #666; font-size: 16px; margin-bottom: 50px; }
 
-        /* ====================== 顶部导航栏样式 ====================== */
         .header {
             position: fixed;
             top: 0;
@@ -44,17 +38,13 @@
         .header.bg-dark { background-color: #0a3474; box-shadow: 0 2px 10px rgba(0,0,0,0.15); }
         .nav-wrap { display: flex; justify-content: space-between; align-items: center; }
         .logo { display: flex; align-items: center; }
-        
-        /* 导航栏LOGO大小 可改数字调大小 不要删代码 */
         .logo img { height: 30px; margin-right: 12px; }
-        
-        .logo-text { color: #fff; font-size: 25px; font-weight: bold; }
+        .logo-text { color: #fff; font-size: 18px; font-weight: bold; }
         .nav-menu { display: flex; }
         .nav-menu li { margin-left: 30px; }
         .nav-menu a { color: #fff; font-size: 16px; transition: color 0.3s; }
         .nav-menu a:hover { color: #ff7d00; }
 
-        /* ====================== 首页第一屏 轮播样式 ====================== */
         .hero {
             width: 100%;
             height: 100vh;
@@ -73,28 +63,25 @@
         .hero-mask { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(10, 52, 116, 0.65); }
         .hero-content { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: #fff; width: 90%; }
         
-        /* 首页中间大LOGO大小 可改 */
         .hero-logo { height: 130px; margin-bottom: 15px; }
         
-        /* 首页中间公司名称大小 可改 */
         .hero-company { font-size: 45px; font-weight: bold; margin-bottom: 25px; }
         
         .hero-title {
-            font-size: 65px;
-         font-family: "华文隶书", "STKaiti", cursive;
-         text-shadow: 2px 2px 3px rgba(0,0,0,0.7); /* 清晰阴影，不模糊 */
-         letter-spacing: 12px;
-         margin-bottom: 20px;
+            font-size: 60px;
+            font-family: "华文隶书", "STKaiti", cursive;
+            text-shadow: 2px 2px 4px #000;
+            letter-spacing: 6px;
+            margin-bottom: 20px;
         }
         .hero-sub { font-size: 22px; margin-bottom: 15px; opacity: 0.9; }
-        .hero-desc { max-width: 800px; margin: 0 auto 35px; font-size: 17px; line-height: 2; }
+        .hero-desc { max-width: 800px; margin: 0 auto 35px; font-size: 16px; line-height: 1.9; }
         .btn { display: inline-block; padding: 12px 32px; border-radius: 4px; font-size: 16px; margin: 0 10px; transition: all 0.3s; }
         .btn-orange { background: #ff7d00; color: #fff; }
         .btn-orange:hover { background: #e06f00; }
         .btn-white { background: transparent; color: #fff; border: 1px solid #fff; }
         .btn-white:hover { background: #fff; color: #0a3474; }
 
-        /* ====================== 第二屏 九宫格服务 ====================== */
         .service { background: #fff; }
         .service-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; }
         .service-card { background: #f8f9fa; padding: 30px 20px; text-align: center; border-radius: 8px; transition: transform 0.3s, box-shadow 0.3s; }
@@ -102,26 +89,22 @@
         .service-card h3 { color: #0a3474; font-size: 20px; margin-bottom: 12px; }
         .service-card p { color: #555; font-size: 15px; }
 
-        /* ====================== 第三屏 关于我们 ====================== */
         .about { background: #fff; }
         .about-text { max-width: 900px; margin: 0 auto; font-size: 16px; line-height: 2; }
         .about-text p { margin-bottom: 15px; }
 
-        /* ====================== 第四屏 发展历程 ====================== */
         .history { background: #0a3474; color: #fff; }
         .history .section-title { color: #fff; }
         .history-line { display: flex; justify-content: space-between; flex-wrap: wrap; }
         .history-item { text-align: center; flex: 1; min-width: 110px; padding: 0 5px; }
         .history-year { font-size: 22px; font-weight: bold; color: #ff7d00; margin-bottom: 8px; }
 
-        /* ====================== 第五屏 服务客户 ====================== */
         .customer { background: #fff; }
         .customer-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; }
         .customer-item { background: #f8f9fa; padding: 25px 15px; text-align: center; border-radius: 8px; }
         .customer-item h4 { color: #0a3474; margin-bottom: 10px; font-size: 18px; }
         .customer-item p { color: #555; font-size: 14px; }
 
-        /* ====================== 第六屏 案例展示 ====================== */
         .case-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
         .case-item { border-radius: 8px; overflow: hidden; background: #fff; }
         .case-item img { width: 100%; height: 220px; object-fit: cover; transition: transform 0.4s; }
@@ -129,18 +112,15 @@
         .case-txt { padding: 15px; text-align: center; }
         .case-txt h4 { color: #0a3474; margin-bottom: 5px; }
 
-        /* ====================== 第七屏 服务流程 ====================== */
         .process-wrap { display: flex; justify-content: space-between; }
         .process-item { text-align: center; flex: 1; position: relative; }
         .process-item:not(:last-child)::after { content: "→"; position: absolute; right: -15px; top: 20px; font-size: 24px; color: #0a3474; }
         .process-item p { color: #0a3474; font-weight: 500; }
 
-        /* ====================== 第八屏 企业优势 ====================== */
         .advantage-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; }
         .adv-item { background: #fff; padding: 30px 20px; text-align: center; border-radius: 8px; }
         .adv-item h4 { color: #0a3474; font-size: 18px; }
 
-        /* ====================== 第九屏 联系我们 ====================== */
         .contact { background: #0a3474; color: #fff; }
         .contact .section-title { color: #fff; }
         .contact-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
@@ -149,244 +129,212 @@
         .contact-form textarea { width: 100%; padding: 12px; margin-bottom: 15px; border: none; border-radius: 4px; font-size: 15px; }
         .contact-form button { background: #ff7d00; color: #fff; border: none; padding: 12px 30px; font-size: 16px; border-radius: 4px; cursor: pointer; }
 
-        /* ====================== 底部版权 ====================== */
         .footer { background: #052048; color: #ccc; padding: 50px 0 20px; }
         .copyright { text-align: center; padding-top: 20px; border-top: 1px solid #204075; font-size: 14px; }
 
-        /* ====================== 手机适配 不要动 ====================== */
+        /* 手机适配 */
         @media (max-width: 768px) {
             .nav-menu {display: none;}
-            .logo img {height: 50px;}
-            .hero-logo { height: 90px; }
-            .hero-company { font-size: 26px; }
-            .hero-title { font-size: 34px; letter-spacing: 3px; }
+            .logo img {height: 30px;}
+            .logo-text {font-size: 14px;}
+            .hero-logo { height: 80px; }
+            .hero-company { font-size: 24px; }
+            .hero-title { font-size: 28px; letter-spacing: 2px; }
+            .hero-sub { font-size: 18px; }
+            .hero-desc { font-size: 15px; padding: 0 10px; }
+            .btn { padding: 10px 20px; font-size: 14px; margin: 0 5px; }
             .service-grid, .case-grid { grid-template-columns: 1fr; }
             .customer-grid { grid-template-columns: repeat(2,1fr); }
             .contact-wrap { grid-template-columns: 1fr; }
+            .process-wrap { flex-wrap: wrap; gap: 10px; }
+            .process-item { min-width: 100px; }
+            .process-item:not(:last-child)::after { display: none; }
         }
     </style>
 </head>
 
 <body>
 
-    <!-- ====================== 顶部导航栏 ====================== -->
-    <!-- 这里只改 文字、菜单、LOGO路径 不要删结构 -->
-    <header class="header" id="header">
-        <div class="container nav-wrap">
-            <div class="logo">
-                <!-- LOGO图片 可改：images/logo.png -->
-                <img src="images/logo.png" alt="LOGO">
-                <!-- 导航栏公司名字 可改 -->
-                <div class="logo-text">河北白云朵朵广告有限公司 专注行业24年</div>
-            </div>
-            <ul class="nav-menu">
-                <!-- 导航菜单 可增删改 -->
-                <li><a href="#home">首页</a></li>
-                <li><a href="#service">服务</a></li>
-                <li><a href="#about">关于我们</a></li>
-                <li><a href="#case">案例</a></li>
-                <li><a href="#contact">联系我们</a></li>
-            </ul>
+<header class="header" id="header">
+    <div class="container nav-wrap">
+        <div class="logo">
+            <img src="images/logo.png" alt="LOGO">
+            <div class="logo-text">河北白云朵朵广告有限公司</div>
         </div>
-    </header>
+        <ul class="nav-menu">
+            <li><a href="#home">首页</a></li>
+            <li><a href="#service">服务</a></li>
+            <li><a href="#about">关于我们</a></li>
+            <li><a href="#case">案例</a></li>
+            <li><a href="#contact">联系我们</a></li>
+        </ul>
+    </div>
+</header>
 
-    <!-- ====================== 第一屏：首页大轮播 ====================== -->
-    <section class="hero" id="home">
-        <!-- 轮播背景图 可改：images/banner01.jpg 这类 -->
-        <div class="hero-slide active"><img src="images/banner01.jpg"></div>
-        <div class="hero-slide"><img src="images/banner02.jpg"></div>
-        <div class="hero-slide"><img src="images/banner03.jpg"></div>
-        <div class="hero-slide"><img src="images/banner04.jpg"></div>
-        <div class="hero-slide"><img src="images/banner05.jpg"></div>
-        <div class="hero-slide"><img src="images/banner06.jpg"></div>
-        <div class="hero-mask"></div>
-        <div class="hero-content">
-            <!-- 首页中间大LOGO 可改图片 -->
-            <img src="images/logo.png" class="hero-logo" alt="企业标识">
-            
-            <!-- 首页中间公司全称 可改文字 -->
-            <div class="hero-company">河北白云朵朵广告有限公司</div>
-            
-            <!-- 首页标语 可改文字 -->
-            <h1 class="hero-title">创意与品质并重，设计与落地同行</h1>
-            
-            <!-- 24年标语 可改 -->
-            <p class="hero-sub">始于2002 · 专注行业24年</p>
-            
-            <!-- 介绍文字 可改 -->
-            <p class="hero-desc">河北白云朵朵广告有限公司始于2002年白云雕刻，二十余年来专注广告工程与文化建设服务。从广告制作与雕刻加工起步，逐步发展成为集广告标识工程、LED显示工程、铝单板与幕墙工程、亮化工程、校园文化、党建文化、企业文化建设及品牌传播服务于一体的综合服务机构。
-
-公司坚持“创意与品质并重，设计与落地同行”，为政府机关、学校、医院、企事业单位及商业客户提供设计、制作、施工一体化服务。</p>
-            
-            <!-- 按钮 不用动 -->
-            <div>
-                <a href="#case" class="btn btn-orange">查看案例</a>
-                <a href="#contact" class="btn btn-white">联系我们</a>
-            </div>
+<section class="hero" id="home">
+    <div class="hero-slide active"><img src="images/banner01.jpg"></div>
+    <div class="hero-slide"><img src="images/banner02.jpg"></div>
+    <div class="hero-slide"><img src="images/banner03.jpg"></div>
+    <div class="hero-slide"><img src="images/banner04.jpg"></div>
+    <div class="hero-slide"><img src="images/banner05.jpg"></div>
+    <div class="hero-slide"><img src="images/banner06.jpg"></div>
+    
+    <div class="hero-mask"></div>
+    <div class="hero-content">
+        <img src="images/logo.png" class="hero-logo" alt="企业标识">
+        <div class="hero-company">河北白云朵朵广告有限公司</div>
+        <h1 class="hero-title">创意与品质并重，设计与落地同行</h1>
+        <p class="hero-sub">始于2002 · 专注行业24年</p>
+        <p class="hero-desc">河北白云朵朵广告有限公司始于2002年白云雕刻，二十余年来专注广告工程与文化建设服务。从广告制作与雕刻加工起步，逐步发展成为集广告标识工程、LED显示工程、铝单板与幕墙工程、亮化工程、校园文化、党建文化、企业文化建设及品牌传播服务于一体的综合服务机构。</p>
+        
+        <div>
+            <a href="#case" class="btn btn-orange">查看案例</a>
+            <a href="#contact" class="btn btn-white">联系我们</a>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- ====================== 第二屏：核心服务 9宫格 ====================== -->
-    <section class="section service" id="service">
-        <div class="container">
-            <h2 class="section-title">我们能为您做什么</h2>
-            <div class="service-grid">
-                <!-- 服务项目 只改中文 不要动标签结构 -->
-                <div class="service-card"><h3>广告标识工程</h3><p>门头招牌、发光字、灯箱广告、精神堡垒、标识标牌</p></div>
-                <div class="service-card"><h3>LED显示工程</h3><p>室内外LED显示屏、会议显示系统、异形显示屏</p></div>
-                <div class="service-card"><h3>铝单板工程</h3><p>氟碳铝单板、金属装饰工程、建筑外立面</p></div>
-                <div class="service-card"><h3>幕墙工程</h3><p>玻璃幕墙、铝板幕墙、商业外立面改造</p></div>
-                <div class="service-card"><h3>标识导视系统</h3><p>地产、医院、园区、商业综合体导视系统</p></div>
-                <div class="service-card"><h3>校园文化建设</h3><p>校园文化墙、校史馆、文化长廊、宣传栏建设</p></div>
-                <div class="service-card"><h3>党建文化建设</h3><p>党建文化墙、党建展厅、党员活动室建设</p></div>
-                <div class="service-card"><h3>企业文化建设</h3><p>企业文化墙、荣誉室、企业展厅、展示空间</p></div>
-                <div class="service-card"><h3>宣传物料设计制作</h3><p>宣传册、折页、海报、包装设计、活动物料</p></div>
-            </div>
+<section class="section service" id="service">
+    <div class="container">
+        <h2 class="section-title">我们能为您做什么</h2>
+        <div class="service-grid">
+            <div class="service-card"><h3>广告标识工程</h3><p>门头招牌、发光字、灯箱广告、精神堡垒、标识标牌</p></div>
+            <div class="service-card"><h3>LED显示工程</h3><p>室内外LED显示屏、会议显示系统、异形显示屏</p></div>
+            <div class="service-card"><h3>铝单板工程</h3><p>氟碳铝单板、金属装饰工程、建筑外立面</p></div>
+            <div class="service-card"><h3>幕墙工程</h3><p>玻璃幕墙、铝板幕墙、商业外立面改造</p></div>
+            <div class="service-card"><h3>标识导视系统</h3><p>地产、医院、园区、商业综合体导视系统</p></div>
+            <div class="service-card"><h3>校园文化建设</h3><p>校园文化墙、校史馆、文化长廊、宣传栏建设</p></div>
+            <div class="service-card"><h3>党建文化建设</h3><p>党建文化墙、党建展厅、党员活动室建设</p></div>
+            <div class="service-card"><h3>企业文化建设</h3><p>企业文化墙、荣誉室、企业展厅、展示空间</p></div>
+            <div class="service-card"><h3>宣传物料设计制作</h3><p>宣传册、折页、海报、包装设计、活动物料</p></div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- ====================== 第三屏：关于我们 ====================== -->
-    <section class="section about" id="about">
-        <div class="container">
-            <h2 class="section-title">二十四年专注品质服务</h2>
-            <div class="about-text">
-                <!-- 只改中文 -->
-                <p>河北白云朵朵广告有限公司的发展可追溯至2002年创立的白云雕刻。二十余年来，我们始终深耕广告与文化建设领域，见证并参与了城市商业环境、校园文化空间及企业品牌形象的不断发展。</p>
-                <p>从最初的广告制作与雕刻加工，到今天涵盖广告标识工程、LED显示工程、铝单板与幕墙工程、亮化工程、校园文化建设、党建文化建设、企业文化建设及品牌传播服务，公司不断拓展服务领域，积累了丰富的项目经验与工程实践能力。</p>
-                <p>我们始终坚持“创意与品质并重，设计与落地同行”的服务理念，现已形成集设计策划、生产制作、工程施工及售后服务于一体的综合服务体系，为政府机关、学校、医院、企事业单位及商业客户提供专业、高效、可靠的一站式解决方案。</p>
-            </div>
+<section class="section about" id="about">
+    <div class="container">
+        <h2 class="section-title">二十四年专注品质服务</h2>
+        <div class="about-text">
+            <p>河北白云朵朵广告有限公司的发展可追溯至2002年创立的白云雕刻。二十余年来，我们始终深耕广告与文化建设领域，见证并参与了城市商业环境、校园文化空间及企业品牌形象的不断发展。</p>
+            <p>从最初的广告制作与雕刻加工，到今天涵盖广告标识工程、LED显示工程、铝单板与幕墙工程、亮化工程、校园文化建设、党建文化建设、企业文化建设及品牌传播服务，公司不断拓展服务领域，积累了丰富的项目经验与工程实践能力。</p>
+            <p>我们始终坚持“创意与品质并重，设计与落地同行”的服务理念，现已形成集设计策划、生产制作、工程施工及售后服务于一体的综合服务体系，为政府机关、学校、医院、企事业单位及商业客户提供专业、高效、可靠的一站式解决方案。</p>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- ====================== 第四屏：发展历程 ====================== -->
-    <section class="section history">
-        <div class="container">
-            <h2 class="section-title">发展历程</h2>
-            <div class="history-line">
-                <!-- 年份和文字可改 结构不动 -->
-                <div class="history-item"><div class="history-year">2002</div><p>白云雕刻成立</p></div>
-                <div class="history-item"><div class="history-year">2008</div><p>LED工程施工</p></div>
-                <div class="history-item"><div class="history-year">2010</div><p>拓展标识工程</p></div>
-                <div class="history-item"><div class="history-year">2017</div><p>校园文化建设</p></div>
-                <div class="history-item"><div class="history-year">2019</div><p>党建文化建设</p></div>
-                <div class="history-item"><div class="history-year">2021</div><p>企业展厅建设</p></div>
-                <div class="history-item"><div class="history-year">2026</div><p>综合服务成型</p></div>
-            </div>
+<section class="section history">
+    <div class="container">
+        <h2 class="section-title">发展历程</h2>
+        <div class="history-line">
+            <div class="history-item"><div class="history-year">2002</div><p>白云雕刻成立</p></div>
+            <div class="history-item"><div class="history-year">2008</div><p>LED工程施工</p></div>
+            <div class="history-item"><div class="history-year">2010</div><p>拓展标识工程</p></div>
+            <div class="history-item"><div class="history-year">2017</div><p>校园文化建设</p></div>
+            <div class="history-item"><div class="history-year">2019</div><p>党建文化建设</p></div>
+            <div class="history-item"><div class="history-year">2021</div><p>企业展厅建设</p></div>
+            <div class="history-item"><div class="history-year">2026</div><p>综合服务成型</p></div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- ====================== 第五屏：服务客户 ====================== -->
-    <section class="section customer">
-        <div class="container">
-            <h2 class="section-title">服务不同领域客户</h2>
-            <div class="customer-grid">
-                <!-- 可改中文 -->
-                <div class="customer-item"><h4>学校教育</h4><p>校园文化、校史馆、导视系统</p></div>
-                <div class="customer-item"><h4>政府机关</h4><p>党建文化、宣传阵地建设</p></div>
-                <div class="customer-item"><h4>医疗机构</h4><p>医院导视、文化环境建设</p></div>
-                <div class="customer-item"><h4>企事业单位</h4><p>企业文化、展厅、品牌升级</p></div>
-                <div class="customer-item"><h4>商业客户</h4><p>门头招牌、LED、商业形象</p></div>
-            </div>
+<section class="section customer">
+    <div class="container">
+        <h2 class="section-title">服务不同领域客户</h2>
+        <div class="customer-grid">
+            <div class="customer-item"><h4>学校教育</h4><p>校园文化、校史馆、导视系统</p></div>
+            <div class="customer-item"><h4>政府机关</h4><p>党建文化、宣传阵地建设</p></div>
+            <div class="customer-item"><h4>医疗机构</h4><p>医院导视、文化环境建设</p></div>
+            <div class="customer-item"><h4>企事业单位</h4><p>企业文化、展厅、品牌升级</p></div>
+            <div class="customer-item"><h4>商业客户</h4><p>门头招牌、LED、商业形象</p></div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- ====================== 第六屏：案例展示 ====================== -->
-    <section class="section" id="case">
-        <div class="container">
-            <h2 class="section-title">案例见证实力</h2>
-            <div class="case-grid">
-                <!-- 只改 图片路径 和 案例名称 -->
-                <div class="case-item"><img src="images/门头店招.jpg"><div class="case-txt"><h4>广告工程</h4></div></div>
-                <div class="case-item"><img src="images/led屏.jpg"><div class="case-txt"><h4>LED显示工程</h4></div></div>
-                <div class="case-item"><img src="images/校园文化.jpg"><div class="case-txt"><h4>校园文化建设</h4></div></div>
-                <div class="case-item"><img src="images/党政文化.jpg"><div class="case-txt"><h4>党建文化建设</h4></div></div>
-                <div class="case-item"><img src="images/铝单板.jpg"><div class="case-txt"><h4>铝单板工程</h4></div></div>
-                <div class="case-item"><img src="images/室内灯箱.jpg"><div class="case-txt"><h4>幕墙与灯箱工程</h4></div></div>
-            </div>
+<section class="section" id="case">
+    <div class="container">
+        <h2 class="section-title">案例见证实力</h2>
+        <div class="case-grid">
+            <div class="case-item"><img src="images/门头店招.jpg"><div class="case-txt"><h4>广告工程</h4></div></div>
+            <div class="case-item"><img src="images/led屏.jpg"><div class="case-txt"><h4>LED显示工程</h4></div></div>
+            <div class="case-item"><img src="images/校园文化.jpg"><div class="case-txt"><h4>校园文化建设</h4></div></div>
+            <div class="case-item"><img src="images/党政文化.jpg"><div class="case-txt"><h4>党建文化建设</h4></div></div>
+            <div class="case-item"><img src="images/铝单板.jpg"><div class="case-txt"><h4>铝单板工程</h4></div></div>
+            <div class="case-item"><img src="images/室内灯箱.jpg"><div class="case-txt"><h4>幕墙与灯箱工程</h4></div></div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- ====================== 第七屏：服务流程 ====================== -->
-    <section class="section process">
-        <div class="container">
-            <h2 class="section-title">一站式服务流程</h2>
-            <div class="process-wrap">
-                <!-- 可改文字 -->
-                <div class="process-item"><p>需求沟通</p></div>
-                <div class="process-item"><p>现场勘察</p></div>
-                <div class="process-item"><p>方案设计</p></div>
-                <div class="process-item"><p>预算报价</p></div>
-                <div class="process-item"><p>生产制作</p></div>
-                <div class="process-item"><p>工程施工</p></div>
-                <div class="process-item"><p>验收交付</p></div>
-                <div class="process-item"><p>售后服务</p></div>
-            </div>
+<section class="section process">
+    <div class="container">
+        <h2 class="section-title">一站式服务流程</h2>
+        <div class="process-wrap">
+            <div class="process-item"><p>需求沟通</p></div>
+            <div class="process-item"><p>现场勘察</p></div>
+            <div class="process-item"><p>方案设计</p></div>
+            <div class="process-item"><p>预算报价</p></div>
+            <div class="process-item"><p>生产制作</p></div>
+            <div class="process-item"><p>工程施工</p></div>
+            <div class="process-item"><p>验收交付</p></div>
+            <div class="process-item"><p>售后服务</p></div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- ====================== 第八屏：企业优势 ====================== -->
-    <section class="section">
-        <div class="container">
-            <h2 class="section-title">企业优势</h2>
-            <div class="advantage-grid">
-                <!-- 可改中文 -->
-                <div class="adv-item"><h4>24年行业经验</h4></div>
-                <div class="adv-item"><h4>设计、制作、施工一体化</h4></div>
-                <div class="adv-item"><h4>丰富项目实施经验</h4></div>
-                <div class="adv-item"><h4>专业施工团队</h4></div>
-                <div class="adv-item"><h4>完善售后服务体系</h4></div>
-                <div class="adv-item"><h4>长期服务政企院校客户</h4></div>
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">企业优势</h2>
+        <div class="advantage-grid">
+            <div class="adv-item"><h4>24年行业经验</h4></div>
+            <div class="adv-item"><h4>设计、制作、施工一体化</h4></div>
+            <div class="adv-item"><h4>丰富项目实施经验</h4></div>
+            <div class="adv-item"><h4>专业施工团队</h4></div>
+            <div class="adv-item"><h4>完善售后服务体系</h4></div>
+            <div class="adv-item"><h4>长期服务政企院校客户</h4></div>
+        </div>
+    </div>
+</section>
+
+<section class="section contact" id="contact">
+    <div class="container">
+        <h2 class="section-title">联系我们</h2>
+        <div class="contact-wrap">
+            <div class="contact-info">
+                <p><strong>河北白云朵朵广告有限公司</strong></p>
+                <p>电话：15503189556（微信同号）</p>
+                <p>地址：衡水市和平路依云湾北门</p>
+                <p>欢迎咨询广告工程、文化建设相关业务</p>
+            </div>
+            <div class="contact-form">
+                <input type="text" placeholder="姓名">
+                <input type="text" placeholder="电话">
+                <input type="text" placeholder="项目类型">
+                <textarea placeholder="留言内容"></textarea>
+                <button>立即咨询</button>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- ====================== 第九屏：联系我们 ====================== -->
-    <section class="section contact" id="contact">
-        <div class="container">
-            <h2 class="section-title">联系我们</h2>
-            <div class="contact-wrap">
-                <div class="contact-info">
-                    <!-- 这里改公司信息、电话、地址 -->
-                    <p><strong>河北白云朵朵广告有限公司</strong></p>
-                    <p>电话：15503189556（微信同号）</p>
-                    <p>地址：衡水市和平路依云湾北门</p>
-                    <p>欢迎咨询广告工程、文化建设相关业务</p>
-                </div>
-                <div class="contact-form">
-                    <input type="text" placeholder="姓名">
-                    <input type="text" placeholder="电话">
-                    <input type="text" placeholder="项目类型">
-                    <textarea placeholder="留言内容"></textarea>
-                    <button>立即咨询</button>
-                </div>
-            </div>
-        </div>
-    </section>
+<footer class="footer">
+    <div class="container">
+        <div class="copyright">© 2026 河北白云朵朵广告有限公司 版权所有</div>
+    </div>
+</footer>
 
-    <!-- ====================== 底部版权 ====================== -->
-    <footer class="footer">
-        <div class="container">
-            <div class="copyright">© 2026 河北白云朵朵广告有限公司 版权所有</div>
-        </div>
-    </footer>
+<script>
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', function(){
+        if(window.scrollY > 50) header.classList.add('bg-dark');
+        else header.classList.remove('bg-dark');
+    });
 
-    <!-- ====================== 轮播+导航滚动效果 不要动 ====================== -->
-    <script>
-        // 导航栏滚动变色 不动
-        const header = document.getElementById('header');
-        window.addEventListener('scroll', function(){
-            if(window.scrollY > 50) header.classList.add('bg-dark');
-            else header.classList.remove('bg-dark');
-        });
-
-        // 轮播图自动切换 不动
-        const slides = document.querySelectorAll('.hero-slide');
-        let i = 0;
-        setInterval(()=>{
-            slides[i].classList.remove('active');
-            i = (i+1)%slides.length;
-            slides[i].classList.add('active');
-        },4000);
-    </script>
+    const slides = document.querySelectorAll('.hero-slide');
+    let i = 0;
+    setInterval(()=>{
+        slides[i].classList.remove('active');
+        i = (i+1)%slides.length;
+        slides[i].classList.add('active');
+    },4000);
+</script>
 </body>
 </html>
