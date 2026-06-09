@@ -3,338 +3,176 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>河北白云朵朵广告有限公司 - 24年工程、文化建设综合服务商</title>
-    
+    <title>河北白云朵朵广告有限公司</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: "Microsoft YaHei", sans-serif;
-        }
-        body {
-            line-height: 1.8;
-            color: #333;
-            background-color: #f5f6f8;
-            scroll-behavior: smooth;
-        }
-        ul { list-style: none; }
-        a { text-decoration: none; color: inherit; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-        .section { padding: 80px 0; }
-        .section-title { text-align: center; font-size: 32px; color: #0a3474; margin-bottom: 12px; font-weight: 600; }
-        .section-sub { text-align: center; color: #666; font-size: 16px; margin-bottom: 50px; }
+        * {margin:0;padding:0;box-sizing:border-box;font-family:Microsoft YaHei,sans-serif;}
+        body {line-height:1.8;color:#333;background:#f5f6f8;scroll-behavior:smooth;}
+        ul{list-style:none;}a{text-decoration:none;color:inherit;}
+        .container{max-width:1200px;margin:0 auto;padding:0 20px;}
+        .section{padding:80px 0;}
+        .section-title{text-align:center;font-size:32px;color:#0a3474;margin-bottom:40px;font-weight:600;}
 
-        .header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 999;
-            transition: background 0.3s ease;
-            padding: 15px 0;
-            background: rgba(10, 52, 116, 0.3);
-        }
-        .header.bg-dark { background-color: #0a3474; box-shadow: 0 2px 10px rgba(0,0,0,0.15); }
-        .nav-wrap { display: flex; justify-content: space-between; align-items: center; }
-        .logo { display: flex; align-items: center; }
-        .logo img { height: 30px; margin-right: 12px; }
-        .logo-text { color: #fff; font-size: 18px; font-weight: bold; }
-        .nav-menu { display: flex; }
-        .nav-menu li { margin-left: 30px; }
-        .nav-menu a { color: #fff; font-size: 16px; transition: color 0.3s; }
-        .nav-menu a:hover { color: #ff7d00; }
+        .header{position:fixed;top:0;left:0;width:100%;z-index:999;padding:15px 0;background:rgba(10,52,116,0.3);}
+        .nav-wrap{display:flex;justify-content:space-between;align-items:center;}
+        .logo{display:flex;align-items:center;gap:12px;color:#fff;font-size:18px;font-weight:bold;}
+        .logo img{height:30px;}
 
-        .hero {
-            width: 100%;
-            height: 100vh;
-            position: relative;
-            overflow: hidden;
-        }
-        .hero-slide {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            opacity: 0;
-            transition: opacity 1s ease;
-        }
-        .hero-slide.active { opacity: 1; }
-        .hero-slide img { width: 100%; height: 100%; object-fit: cover; }
-        .hero-mask { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(10, 52, 116, 0.65); }
-        .hero-content { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: #fff; width: 90%; }
-        
-        .hero-logo { height: 130px; margin-bottom: 15px; }
-        
-        .hero-company { font-size: 45px; font-weight: bold; margin-bottom: 25px; }
-        
-        .hero-title {
-            font-size: 60px;
-            font-family: "华文隶书", "STKaiti", cursive;
-            text-shadow: 2px 2px 4px #000;
-            letter-spacing: 6px;
-            margin-bottom: 20px;
-        }
-        .hero-sub { font-size: 22px; margin-bottom: 15px; opacity: 0.9; }
-        .hero-desc { max-width: 800px; margin: 0 auto 35px; font-size: 16px; line-height: 1.9; }
-        .btn { display: inline-block; padding: 12px 32px; border-radius: 4px; font-size: 16px; margin: 0 10px; transition: all 0.3s; }
-        .btn-orange { background: #ff7d00; color: #fff; }
-        .btn-orange:hover { background: #e06f00; }
-        .btn-white { background: transparent; color: #fff; border: 1px solid #fff; }
-        .btn-white:hover { background: #fff; color: #0a3474; }
+        .hero{width:100%;height:100vh;position:relative;overflow:hidden;}
+        .hero-slide{position:absolute;width:100%;height:100%;opacity:0;transition:opacity 1s;}
+        .hero-slide.active{opacity:1;}
+        .hero-slide img{width:100%;height:100%;object-fit:cover;}
+        .hero-mask{position:absolute;inset:0;background:rgba(10,52,116,0.65);}
+        .hero-content{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;color:#fff;width:90%;}
+        .hero-logo{height:120px;margin-bottom:10px;}
 
-        .service { background: #fff; }
-        .service-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; }
-        .service-card { background: #f8f9fa; padding: 30px 20px; text-align: center; border-radius: 8px; transition: transform 0.3s, box-shadow 0.3s; }
-        .service-card:hover { transform: translateY(-6px); box-shadow: 0 8px 20px rgba(10,52,116,0.12); }
-        .service-card h3 { color: #0a3474; font-size: 20px; margin-bottom: 12px; }
-        .service-card p { color: #555; font-size: 15px; }
+        .service{background:#fff;}
+        .service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:25px;}
+        .service-card{background:#f8f9fa;border-radius:8px;overflow:hidden;cursor:pointer;transition:0.3s;}
+        .service-card:hover{transform:translateY(-6px);box-shadow:0 8px 20px rgba(10,52,116,0.1);}
+        .card-cover{width:100%;height:180px;object-fit:cover;}
+        .card-text{padding:20px;text-align:center;}
+        .service-card h3{color:#0a3474;font-size:20px;margin-bottom:8px;}
+        .service-card p{color:#555;font-size:15px;}
 
-        .about { background: #fff; }
-        .about-text { max-width: 900px; margin: 0 auto; font-size: 16px; line-height: 2; }
-        .about-text p { margin-bottom: 15px; }
+        .album-modal{position:fixed;inset:0;background:rgba(0,0,0,0.9);z-index:9999;padding:40px 20px;display:none;overflow-y:auto;}
+        .modal-close{position:fixed;top:20px;right:40px;color:#fff;font-size:40px;cursor:pointer;}
+        .album-title{color:#fff;text-align:center;font-size:28px;margin-bottom:30px;}
+        .album-grid{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:15px;}
+        .album-grid img{width:100%;height:180px;object-fit:cover;border-radius:6px;}
 
-        .history { background: #0a3474; color: #fff; }
-        .history .section-title { color: #fff; }
-        .history-line { display: flex; justify-content: space-between; flex-wrap: wrap; }
-        .history-item { text-align: center; flex: 1; min-width: 110px; padding: 0 5px; }
-        .history-year { font-size: 22px; font-weight: bold; color: #ff7d00; margin-bottom: 8px; }
-
-        .customer { background: #fff; }
-        .customer-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; }
-        .customer-item { background: #f8f9fa; padding: 25px 15px; text-align: center; border-radius: 8px; }
-        .customer-item h4 { color: #0a3474; margin-bottom: 10px; font-size: 18px; }
-        .customer-item p { color: #555; font-size: 14px; }
-
-        .case-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-        .case-item { border-radius: 8px; overflow: hidden; background: #fff; }
-        .case-item img { width: 100%; height: 220px; object-fit: cover; transition: transform 0.4s; }
-        .case-item:hover img { transform: scale(1.05); }
-        .case-txt { padding: 15px; text-align: center; }
-        .case-txt h4 { color: #0a3474; margin-bottom: 5px; }
-
-        .process-wrap { display: flex; justify-content: space-between; }
-        .process-item { text-align: center; flex: 1; position: relative; }
-        .process-item:not(:last-child)::after { content: "→"; position: absolute; right: -15px; top: 20px; font-size: 24px; color: #0a3474; }
-        .process-item p { color: #0a3474; font-weight: 500; }
-
-        .advantage-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; }
-        .adv-item { background: #fff; padding: 30px 20px; text-align: center; border-radius: 8px; }
-        .adv-item h4 { color: #0a3474; font-size: 18px; }
-
-        .contact { background: #0a3474; color: #fff; }
-        .contact .section-title { color: #fff; }
-        .contact-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
-        .contact-info p { font-size: 17px; margin: 15px 0; }
-        .contact-form input,
-        .contact-form textarea { width: 100%; padding: 12px; margin-bottom: 15px; border: none; border-radius: 4px; font-size: 15px; }
-        .contact-form button { background: #ff7d00; color: #fff; border: none; padding: 12px 30px; font-size: 16px; border-radius: 4px; cursor: pointer; }
-
-        .footer { background: #052048; color: #ccc; padding: 50px 0 20px; }
-        .copyright { text-align: center; padding-top: 20px; border-top: 1px solid #204075; font-size: 14px; }
-
-        /* 手机适配 */
-        @media (max-width: 768px) {
-            .nav-menu {display: none;}
-            .logo img {height: 30px;}
-            .logo-text {font-size: 14px;}
-            .hero-logo { height: 80px; }
-            .hero-company { font-size: 24px; }
-            .hero-title { font-size: 28px; letter-spacing: 2px; }
-            .hero-sub { font-size: 18px; }
-            .hero-desc { font-size: 15px; padding: 0 10px; }
-            .btn { padding: 10px 20px; font-size: 14px; margin: 0 5px; }
-            .service-grid, .case-grid { grid-template-columns: 1fr; }
-            .customer-grid { grid-template-columns: repeat(2,1fr); }
-            .contact-wrap { grid-template-columns: 1fr; }
-            .process-wrap { flex-wrap: wrap; gap: 10px; }
-            .process-item { min-width: 100px; }
-            .process-item:not(:last-child)::after { display: none; }
+        @media(max-width:768px){
+            .service-grid{grid-template-columns:1fr;}
+            .album-grid{grid-template-columns:repeat(2,1fr);}
         }
     </style>
 </head>
-
 <body>
 
-<header class="header" id="header">
+<header class="header">
     <div class="container nav-wrap">
         <div class="logo">
-            <img src="images/logo.png" alt="LOGO">
-            <div class="logo-text">河北白云朵朵广告有限公司</div>
+            <img src="images/logo.png" alt="logo">
+            河北白云朵朵广告有限公司
         </div>
-        <ul class="nav-menu">
-            <li><a href="#home">首页</a></li>
-            <li><a href="#service">服务</a></li>
-            <li><a href="#about">关于我们</a></li>
-            <li><a href="#case">案例</a></li>
-            <li><a href="#contact">联系我们</a></li>
-        </ul>
     </div>
 </header>
 
-<section class="hero" id="home">
+<section class="hero">
     <div class="hero-slide active"><img src="images/banner01.jpg"></div>
-    <div class="hero-slide"><img src="images/banner02.jpg"></div>
-    <div class="hero-slide"><img src="images/banner03.jpg"></div>
-    <div class="hero-slide"><img src="images/banner04.jpg"></div>
-    <div class="hero-slide"><img src="images/banner05.jpg"></div>
-    <div class="hero-slide"><img src="images/banner06.jpg"></div>
-    
     <div class="hero-mask"></div>
     <div class="hero-content">
-        <img src="images/logo.png" class="hero-logo" alt="企业标识">
-        <div class="hero-company">河北白云朵朵广告有限公司</div>
-        <h1 class="hero-title">创意与品质并重，设计与落地同行</h1>
-        <p class="hero-sub">始于2002 · 专注行业24年</p>
-        <p class="hero-desc">河北白云朵朵广告有限公司始于2002年白云雕刻，二十余年来专注广告工程与文化建设服务。从广告制作与雕刻加工起步，逐步发展成为集广告标识工程、LED显示工程、铝单板与幕墙工程、亮化工程、校园文化、党建文化、企业文化建设及品牌传播服务于一体的综合服务机构。</p>
-        
-        <div>
-            <a href="#case" class="btn btn-orange">查看案例</a>
-            <a href="#contact" class="btn btn-white">联系我们</a>
-        </div>
+        <img src="images/logo.png" class="hero-logo">
+        <h1>创意与品质并重，设计与落地同行</h1>
     </div>
 </section>
 
-<section class="section service" id="service">
+<section class="section service">
     <div class="container">
         <h2 class="section-title">我们能为您做什么</h2>
         <div class="service-grid">
-            <div class="service-card"><h3>广告标识工程</h3><p>门头招牌、发光字、灯箱广告、精神堡垒、标识标牌</p></div>
-            <div class="service-card"><h3>LED显示工程</h3><p>室内外LED显示屏、会议显示系统、异形显示屏</p></div>
-            <div class="service-card"><h3>铝单板工程</h3><p>氟碳铝单板、金属装饰工程、建筑外立面</p></div>
-            <div class="service-card"><h3>幕墙工程</h3><p>玻璃幕墙、铝板幕墙、商业外立面改造</p></div>
-            <div class="service-card"><h3>标识导视系统</h3><p>地产、医院、园区、商业综合体导视系统</p></div>
-            <div class="service-card"><h3>校园文化建设</h3><p>校园文化墙、校史馆、文化长廊、宣传栏建设</p></div>
-            <div class="service-card"><h3>党建文化建设</h3><p>党建文化墙、党建展厅、党员活动室建设</p></div>
-            <div class="service-card"><h3>企业文化建设</h3><p>企业文化墙、荣誉室、企业展厅、展示空间</p></div>
-            <div class="service-card"><h3>宣传物料设计制作</h3><p>宣传册、折页、海报、包装设计、活动物料</p></div>
-        </div>
-    </div>
-</section>
 
-<section class="section about" id="about">
-    <div class="container">
-        <h2 class="section-title">二十四年专注品质服务</h2>
-        <div class="about-text">
-            <p>河北白云朵朵广告有限公司的发展可追溯至2002年创立的白云雕刻。二十余年来，我们始终深耕广告与文化建设领域，见证并参与了城市商业环境、校园文化空间及企业品牌形象的不断发展。</p>
-            <p>从最初的广告制作与雕刻加工，到今天涵盖广告标识工程、LED显示工程、铝单板与幕墙工程、亮化工程、校园文化建设、党建文化建设、企业文化建设及品牌传播服务，公司不断拓展服务领域，积累了丰富的项目经验与工程实践能力。</p>
-            <p>我们始终坚持“创意与品质并重，设计与落地同行”的服务理念，现已形成集设计策划、生产制作、工程施工及售后服务于一体的综合服务体系，为政府机关、学校、医院、企事业单位及商业客户提供专业、高效、可靠的一站式解决方案。</p>
-        </div>
-    </div>
-</section>
-
-<section class="section history">
-    <div class="container">
-        <h2 class="section-title">发展历程</h2>
-        <div class="history-line">
-            <div class="history-item"><div class="history-year">2002</div><p>白云雕刻成立</p></div>
-            <div class="history-item"><div class="history-year">2008</div><p>LED工程施工</p></div>
-            <div class="history-item"><div class="history-year">2010</div><p>拓展标识工程</p></div>
-            <div class="history-item"><div class="history-year">2017</div><p>校园文化建设</p></div>
-            <div class="history-item"><div class="history-year">2019</div><p>党建文化建设</p></div>
-            <div class="history-item"><div class="history-year">2021</div><p>企业展厅建设</p></div>
-            <div class="history-item"><div class="history-year">2026</div><p>综合服务成型</p></div>
-        </div>
-    </div>
-</section>
-
-<section class="section customer">
-    <div class="container">
-        <h2 class="section-title">服务不同领域客户</h2>
-        <div class="customer-grid">
-            <div class="customer-item"><h4>学校教育</h4><p>校园文化、校史馆、导视系统</p></div>
-            <div class="customer-item"><h4>政府机关</h4><p>党建文化、宣传阵地建设</p></div>
-            <div class="customer-item"><h4>医疗机构</h4><p>医院导视、文化环境建设</p></div>
-            <div class="customer-item"><h4>企事业单位</h4><p>企业文化、展厅、品牌升级</p></div>
-            <div class="customer-item"><h4>商业客户</h4><p>门头招牌、LED、商业形象</p></div>
-        </div>
-    </div>
-</section>
-
-<section class="section" id="case">
-    <div class="container">
-        <h2 class="section-title">案例见证实力</h2>
-        <div class="case-grid">
-            <div class="case-item"><img src="images/门头店招.jpg"><div class="case-txt"><h4>广告工程</h4></div></div>
-            <div class="case-item"><img src="images/led屏.jpg"><div class="case-txt"><h4>LED显示工程</h4></div></div>
-            <div class="case-item"><img src="images/校园文化.jpg"><div class="case-txt"><h4>校园文化建设</h4></div></div>
-            <div class="case-item"><img src="images/党政文化.jpg"><div class="case-txt"><h4>党建文化建设</h4></div></div>
-            <div class="case-item"><img src="images/铝单板.jpg"><div class="case-txt"><h4>铝单板工程</h4></div></div>
-            <div class="case-item"><img src="images/室内灯箱.jpg"><div class="case-txt"><h4>幕墙与灯箱工程</h4></div></div>
-        </div>
-    </div>
-</section>
-
-<section class="section process">
-    <div class="container">
-        <h2 class="section-title">一站式服务流程</h2>
-        <div class="process-wrap">
-            <div class="process-item"><p>需求沟通</p></div>
-            <div class="process-item"><p>现场勘察</p></div>
-            <div class="process-item"><p>方案设计</p></div>
-            <div class="process-item"><p>预算报价</p></div>
-            <div class="process-item"><p>生产制作</p></div>
-            <div class="process-item"><p>工程施工</p></div>
-            <div class="process-item"><p>验收交付</p></div>
-            <div class="process-item"><p>售后服务</p></div>
-        </div>
-    </div>
-</section>
-
-<section class="section">
-    <div class="container">
-        <h2 class="section-title">企业优势</h2>
-        <div class="advantage-grid">
-            <div class="adv-item"><h4>24年行业经验</h4></div>
-            <div class="adv-item"><h4>设计、制作、施工一体化</h4></div>
-            <div class="adv-item"><h4>丰富项目实施经验</h4></div>
-            <div class="adv-item"><h4>专业施工团队</h4></div>
-            <div class="adv-item"><h4>完善售后服务体系</h4></div>
-            <div class="adv-item"><h4>长期服务政企院校客户</h4></div>
-        </div>
-    </div>
-</section>
-
-<section class="section contact" id="contact">
-    <div class="container">
-        <h2 class="section-title">联系我们</h2>
-        <div class="contact-wrap">
-            <div class="contact-info">
-                <p><strong>河北白云朵朵广告有限公司</strong></p>
-                <p>电话：15503189556（微信同号）</p>
-                <p>地址：衡水市和平路依云湾北门</p>
-                <p>欢迎咨询广告工程、文化建设相关业务</p>
+            <div class="service-card" data-type="led">
+                <img class="card-cover" src="images/LED显示工程.jpg">
+                <div class="card-text"><h3>LED显示工程</h3><p>室内大屏、户外全彩屏</p></div>
             </div>
-            <div class="contact-form">
-                <input type="text" placeholder="姓名">
-                <input type="text" placeholder="电话">
-                <input type="text" placeholder="项目类型">
-                <textarea placeholder="留言内容"></textarea>
-                <button>立即咨询</button>
+
+            <div class="service-card" data-type="sign">
+                <img class="card-cover" src="images/标牌其它.jpg">
+                <div class="card-text"><h3>广告标识工程</h3><p>标牌、精神堡垒、科室牌</p></div>
             </div>
+
+            <div class="service-card" data-type="guide">
+                <img class="card-cover" src="images/标识导示.jpg">
+                <div class="card-text"><h3>标识导示</h3><p>导视牌、楼层索引、指示牌</p></div>
+            </div>
+
+            <div class="service-card" data-type="party">
+                <img class="card-cover" src="images/党建文化.jpg">
+                <div class="card-text"><h3>党建文化建设</h3><p>党建展厅、文化墙、长廊</p></div>
+            </div>
+
+            <div class="service-card" data-type="lightbox">
+                <img class="card-cover" src="images/灯箱发光字.jpg">
+                <div class="card-text"><h3>灯箱发光字</h3><p>发光字、灯箱、门头招牌</p></div>
+            </div>
+
+            <div class="service-card" data-type="light">
+                <img class="card-cover" src="images/亮化工程.jpg">
+                <div class="card-text"><h3>亮化工程</h3><p>楼宇亮化、景观照明</p></div>
+            </div>
+
+            <div class="service-card" data-type="aluminum">
+                <img class="card-cover" src="images/铝板幕墙.jpg">
+                <div class="card-text"><h3>铝单板幕墙</h3><p>外墙装饰、冲孔铝板</p></div>
+            </div>
+
+            <div class="service-card" data-type="store">
+                <img class="card-cover" src="images/门头店招.jpg">
+                <div class="card-text"><h3>门头店招</h3><p>商铺门头、形象墙</p></div>
+            </div>
+
+            <div class="service-card" data-type="culture">
+                <img class="card-cover" src="images/企业文化.jpg">
+                <div class="card-text"><h3>企业文化建设</h3><p>文化墙、展厅、宣传栏</p></div>
+            </div>
+
+            <div class="service-card" data-type="school">
+                <img class="card-cover" src="images/校园文化.jpg">
+                <div class="card-text"><h3>校园文化建设</h3><p>校园文化、展板、雕塑</p></div>
+            </div>
+
+            <div class="service-card" data-type="material">
+                <img class="card-cover" src="images/宣传物料.jpg">
+                <div class="card-text"><h3>宣传物料</h3><p>展架、画册、宣传单</p></div>
+            </div>
+
         </div>
     </div>
 </section>
 
-<footer class="footer">
-    <div class="container">
-        <div class="copyright">© 2026 河北白云朵朵广告有限公司 版权所有</div>
-    </div>
-</footer>
+<div class="album-modal" id="albumModal">
+    <span class="modal-close">×</span>
+    <h2 class="album-title"></h2>
+    <div class="album-grid"></div>
+</div>
 
 <script>
-    const header = document.getElementById('header');
-    window.addEventListener('scroll', function(){
-        if(window.scrollY > 50) header.classList.add('bg-dark');
-        else header.classList.remove('bg-dark');
-    });
+const allAlbum = {
+    led: {title:"LED显示工程",list:Array.from({length:27},(_,i)=>`images/LED显示工程/ping (${i+1}).jpg`)},
+    sign: {title:"广告标识工程",list:Array.from({length:35},(_,i)=>`images/标牌其它/pai (${i+1}).jpg`)},
+    guide: {title:"标识导示",list:Array.from({length:35},(_,i)=>`images/标识导示/biao (${i+1}).jpg`)},
+    party: {title:"党建文化建设",list:Array.from({length:13},(_,i)=>`images/党建文化/dang (${i+1}).jpg`)},
+    lightbox: {title:"灯箱发光字",list:Array.from({length:40},(_,i)=>`images/灯箱发光字/zi (${i+1}).jpg`)},
+    light: {title:"亮化工程",list:Array.from({length:44},(_,i)=>`images/亮化工程/lianghua (${i+1}).jpg`)},
+    aluminum: {title:"铝单板幕墙",list:Array.from({length:39},(_,i)=>`images/铝板幕墙/lvban (${i+1}).jpg`)},
+    store: {title:"门头店招",list:Array.from({length:40},(_,i)=>`images/门头店招/mentou (${i+1}).jpg`)},
+    culture: {title:"企业文化建设",list:Array.from({length:49},(_,i)=>`images/企业文化/qiye (${i+1}).jpg`)},
+    school: {title:"校园文化建设",list:Array.from({length:67},(_,i)=>`images/校园文化/xiao (${i+1}).jpg`)},
+    material: {title:"宣传物料",list:Array.from({length:11},(_,i)=>`images/宣传物料/xuan (${i+1}).jpg`)}
+};
 
-    const slides = document.querySelectorAll('.hero-slide');
-    let i = 0;
-    setInterval(()=>{
-        slides[i].classList.remove('active');
-        i = (i+1)%slides.length;
-        slides[i].classList.add('active');
-    },4000);
+const cards = document.querySelectorAll(".service-card");
+const modal = document.getElementById("albumModal");
+const close = document.querySelector(".modal-close");
+const title = document.querySelector(".album-title");
+const box = document.querySelector(".album-grid");
+
+cards.forEach(c=>{
+    c.onclick=()=>{
+        const d=allAlbum[c.dataset.type];
+        title.innerText=d.title;
+        box.innerHTML="";
+        d.list.forEach(s=>{
+            const img=document.createElement("img");
+            img.src=s;
+            box.appendChild(img);
+        });
+        modal.style.display="block";
+    }
+});
+
+close.onclick=()=>{modal.style.display="none";}
+modal.onclick=(e)=>{if(e.target===modal)modal.style.display="none";}
 </script>
 </body>
 </html>
