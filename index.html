@@ -21,46 +21,63 @@
         .nav-list{display:flex;gap:32px;}
         .nav-list a{color:#fff;font-size:15px;}
         
-        /* 首屏 */
+        /* 首屏 遮罩+文字清晰 */
         .hero{height:100vh;position:relative;overflow:hidden;}
         .hero-slide{position:absolute;inset:0;opacity:0;transition:1s;}
         .hero-slide.active{opacity:1;}
         .hero-slide img{width:100%;height:100%;object-fit:cover;}
-        .hero-inner{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;color:#fff;width:90%;max-width:900px;}
+        .hero-mask{position:absolute;inset:0;background:rgba(0,0,0,0.55);z-index:1;}
+        .hero-inner{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;color:#fff;width:90%;max-width:900px;z-index:2;}
         .hero-company{font-size:20px;margin-bottom:10px;}
-        .hero-tag{font-size:17px;margin:10px 0;opacity:0.95;}
-        .hero-title{
-            font-family:"Microsoft YaHei";
-            font-weight:700;
-            font-size:44px;
-            margin:20px 0;
-            line-height:1.3;
-        }
+        .hero-tag{font-size:17px;margin:10px 0;opacity:0.98;}
+        .hero-title{font-family:"Microsoft YaHei";font-weight:700;font-size:44px;margin:20px 0;line-height:1.3;}
+        .hero-desc{font-size:16px;margin-top:12px;opacity:0.95;}
 
-        /* 业务板块（纯文字） */
+        /* 核心业务 */
         .service-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:24px;}
         .service-card{background:#f5f7fa;padding:28px;border-radius:8px;}
         .service-card h3{font-size:20px;color:#0a3474;margin-bottom:10px;}
         .service-card p{font-size:15px;color:#555;line-height:1.7;}
 
-        /* 历程 */
-        .history{background:#f8f9fa;}
-        .history-list{display:flex;flex-wrap:wrap;justify-content:center;gap:20px;}
-        .history-item{width:170px;text-align:center;padding:20px;background:#fff;border-radius:8px;}
-        .history-year{font-size:22px;font-weight:bold;color:#0a3474;margin-bottom:8px;}
+        /* 数字实力 */
+        .data{background:#f8f9fa;}
+        .data-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;text-align:center;}
+        .data-item h3{font-size:36px;color:#0a3474;font-weight:bold;margin-bottom:6px;}
+        .data-item p{font-size:16px;color:#555;}
 
-        /* 优势 */
-        .advantage{background:#fff;}
-        .adv-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
-        .adv-item{background:#f5f7fa;padding:28px;border-radius:8px;text-align:center;}
-        .adv-item h4{font-size:18px;color:#0a3474;margin-bottom:10px;}
-        .adv-item p{font-size:14px;color:#555;line-height:1.6;}
+        /* 关于我们 左右布局 */
+        .about-wrap{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;}
+        .about-text p{font-size:16px;line-height:1.9;color:#444;margin-bottom:16px;}
+        .about-img img{width:100%;border-radius:8px;object-fit:cover;height:360px;}
 
-        /* 案例（可点击弹窗） */
+        /* 时间轴历程 */
+        .timeline{max-width:900px;margin:0 auto;position:relative;padding-left:40px;}
+        .timeline::before{content:'';position:absolute;left:10px;top:0;bottom:0;width:2px;background:#0a3474;opacity:0.3;}
+        .t-item{position:relative;margin-bottom:30px;padding-left:30px;}
+        .t-year{font-size:20px;font-weight:bold;color:#0a3474;margin-bottom:6px;}
+        .t-text{font-size:15px;color:#555;}
+
+        /* 服务客户 图标卡片 */
+        .client-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:20px;text-align:center;}
+        .client-card{background:#f5f7fa;padding:24px;border-radius:8px;}
+        .client-card h4{font-size:16px;color:#0a3474;}
+
+        /* 案例 排序已调整：文化类优先 */
         .case-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:20px;}
         .case-item{cursor:pointer;border-radius:8px;overflow:hidden;background:#f5f7fa;}
         .case-item img{width:100%;height:160px;object-fit:cover;display:block;}
         .case-text{padding:12px;text-align:center;font-weight:500;}
+
+        /* 施工现场 */
+        .site{background:#f8f9fa;}
+        .site-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+        .site-item img{width:100%;height:200px;object-fit:cover;border-radius:8px;}
+
+        /* 企业优势 */
+        .adv-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
+        .adv-item{background:#f5f7fa;padding:28px;border-radius:8px;text-align:center;}
+        .adv-item h4{font-size:18px;color:#0a3474;margin-bottom:10px;}
+        .adv-item p{font-size:14px;color:#555;line-height:1.6;}
 
         /* 弹窗 */
         #albumModal{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.9);z-index:9999;padding:40px 20px;overflow:auto;}
@@ -83,42 +100,44 @@
         <div class="logo">河北白云朵朵广告有限公司</div>
         <ul class="nav-list">
             <li><a href="#hero">首页</a></li>
-            <li><a href="#service">主营业务</a></li>
+            <li><a href="#service">核心业务</a></li>
+            <li><a href="#data">数字实力</a></li>
             <li><a href="#about">关于我们</a></li>
             <li><a href="#history">发展历程</a></li>
             <li><a href="#client">服务客户</a></li>
             <li><a href="#case">精选案例</a></li>
-            <li><a href="#advantage">企业优势</a></li>
+            <li><a href="#site">施工现场</a></li>
+            <li><a href="#advantage">为什么选择我们</a></li>
             <li><a href="#footer">联系我们</a></li>
         </ul>
     </div>
 </header>
 
-<!-- 首屏 -->
+<!-- ① 首页轮播 → 已加定位小字 -->
 <section class="hero" id="hero">
-    <div class="hero-slide active">
-        <img src="images/banner01.jpg">
-        <div class="hero-inner">
-            <div class="hero-company">河北白云朵朵广告有限公司</div>
-            <p class="hero-tag">始于2002 · 专注广告行业24年</p>
-            <h1 class="hero-title">广告工程｜装饰工程｜LED工程｜文化建设</h1>
-            <p class="hero-tag">创意无限 · 传播有道 · 价值共赢</p>
-        </div>
-    </div>
+    <div class="hero-slide active"><img src="images/banner01.jpg"></div>
     <div class="hero-slide"><img src="images/banner02.jpg"></div>
     <div class="hero-slide"><img src="images/banner03.jpg"></div>
     <div class="hero-slide"><img src="images/banner04.jpg"></div>
     <div class="hero-slide"><img src="images/banner05.jpg"></div>
     <div class="hero-slide"><img src="images/banner06.jpg"></div>
+    <div class="hero-mask"></div>
+    <div class="hero-inner">
+        <div class="hero-company">河北白云朵朵广告有限公司</div>
+        <p class="hero-tag">始于2002 · 专注广告行业24年</p>
+        <h1 class="hero-title">广告工程｜装饰工程｜LED工程｜文化建设</h1>
+        <p class="hero-tag">创意无限 · 传播有道 · 价值共赢</p>
+        <p class="hero-desc">服务政府机关、学校、医院、企事业单位及商业客户</p>
+    </div>
 </section>
 
-<!-- 11大业务 -->
+<!-- ② 核心业务领域 → 已改标题 -->
 <section class="section service" id="service">
     <div class="container">
-        <h2 class="section-title">11大主营业务范围</h2>
+        <h2 class="section-title">核心业务领域</h2>
         <p class="section-sub">
-            覆盖广告工程、装饰工程、LED工程及文化建设领域，<br>
-            为政府机关、学校、医院、企事业单位及商业客户提供专业解决方案。
+            从广告标识到文化建设，从设计策划到工程施工，<br>
+            为客户提供一站式综合服务解决方案。
         </p>
         <div class="service-grid">
             <div class="service-card"><h3>门头店招</h3><p>商业门头、连锁店招、企业形象门头、LED发光门头、户外品牌招牌</p></div>
@@ -136,114 +155,131 @@
     </div>
 </section>
 
-<!-- 关于我们 -->
-<section class="section" id="about">
+<!-- ③ 数字见证实力 → 新增 -->
+<section class="section data" id="data">
     <div class="container">
-        <h2 class="section-title">关于我们</h2>
-        <p class="section-sub">
-            河北白云朵朵广告有限公司始于2002年白云雕刻，历经二十余年发展，已成为集广告工程、装饰工程、LED工程、文化建设于一体的综合服务商。
-        </p>
-        <p class="section-sub">
-            公司拥有专业设计、生产、施工团队，专注为各类客户提供一站式落地服务。
-        </p>
-        <p class="section-sub">
-            公司坚持“创意与品质并重，设计与落地同行”，<br>
-            形成设计策划、生产制作、工程施工及售后服务一体化体系，<br>
-            持续为政府机关、学校、医院、企事业单位及商业客户提供专业、高效、可靠的整体解决方案。
-        </p>
-    </div>
-</section>
-
-<!-- 发展历程 -->
-<section class="section history" id="history">
-    <div class="container">
-        <h2 class="section-title">发展历程</h2>
-        <div class="history-list">
-            <div class="history-item"><div class="history-year">2002</div><p>白云雕刻成立</p></div>
-            <div class="history-item"><div class="history-year">2008</div><p>拓展门头店招与广告标识业务</p></div>
-            <div class="history-item"><div class="history-year">2013</div><p>进入LED显示工程领域</p></div>
-            <div class="history-item"><div class="history-year">2017</div><p>河北白云朵朵广告有限公司注册成立</p></div>
-            <div class="history-item"><div class="history-year">2019</div><p>开展校园文化建设项目</p></div>
-            <div class="history-item"><div class="history-year">2021</div><p>开展党建文化建设项目</p></div>
-            <div class="history-item"><div class="history-year">2023</div><p>开展企业文化建设项目</p></div>
-            <div class="history-item"><div class="history-year">2026</div><p>形成广告工程与文化建设综合服务体系</p></div>
+        <h2 class="section-title">数字见证实力</h2>
+        <div class="data-grid">
+            <div class="data-item"><h3>24年</h3><p>行业经验</p></div>
+            <div class="data-item"><h3>11大类</h3><p>主营业务</p></div>
+            <div class="data-item"><h3>全流程</h3><p>设计·制作·施工一体化</p></div>
+            <div class="data-item"><h3>全覆盖</h3><p>学校·政府·医院·企业</p></div>
         </div>
     </div>
 </section>
 
-<!-- 服务客户 -->
-<section class="section" id="client">
+<!-- ④ 关于我们 → 左右布局 -->
+<section class="section" id="about">
     <div class="container">
-        <h2 class="section-title">服务客户</h2>
-        <p class="section-sub">
-            二十余年来，我们持续服务于政府机关、学校、医院、<br>
-            企事业单位及商业客户，积累了丰富的项目实施经验。
-        </p>
+        <h2 class="section-title">关于我们</h2>
+        <div class="about-wrap">
+            <div class="about-text">
+                <p>河北白云朵朵广告有限公司始于2002年白云雕刻，历经二十余年发展，已成为集广告工程、装饰工程、LED工程、文化建设于一体的综合服务商。</p>
+                <p>公司拥有专业设计、生产、施工团队，专注为各类客户提供一站式落地服务。</p>
+                <p>公司坚持“创意与品质并重，设计与落地同行”，形成设计策划、生产制作、工程施工及售后服务一体化体系，持续为政府机关、学校、医院、企事业单位及商业客户提供专业、高效、可靠的整体解决方案。</p>
+            </div>
+            <div class="about-img">
+                <img src="images/about.jpg" alt="公司实力">
+            </div>
+        </div>
     </div>
 </section>
 
-<!-- 精选案例（唯一点击弹窗） -->
+<!-- ⑤ 发展历程 → 时间轴 -->
+<section class="section" id="history">
+    <div class="container">
+        <h2 class="section-title">发展历程</h2>
+        <div class="timeline">
+            <div class="t-item"><div class="t-year">2002</div><div class="t-text">白云雕刻成立</div></div>
+            <div class="t-item"><div class="t-year">2008</div><div class="t-text">拓展门头店招与广告标识业务</div></div>
+            <div class="t-item"><div class="t-year">2013</div><div class="t-text">进入LED显示工程领域</div></div>
+            <div class="t-item"><div class="t-year">2017</div><div class="t-text">河北白云朵朵广告有限公司注册成立</div></div>
+            <div class="t-item"><div class="t-year">2019</div><div class="t-text">开展校园文化建设项目</div></div>
+            <div class="t-item"><div class="t-year">2021</div><div class="t-text">开展党建文化建设项目</div></div>
+            <div class="t-item"><div class="t-year">2023</div><div class="t-text">开展企业文化建设项目</div></div>
+            <div class="t-item"><div class="t-year">2026</div><div class="t-text">形成广告工程与文化建设综合服务体系</div></div>
+        </div>
+    </div>
+</section>
+
+<!-- ⑥ 服务客户 → 5个卡片 -->
+<section class="section" id="client">
+    <div class="container">
+        <h2 class="section-title">服务客户</h2>
+        <p class="section-sub">二十余年来，我们持续服务于各类客户，积累了丰富的项目实施经验。</p>
+        <div class="client-grid">
+            <div class="client-card"><h4>学校教育</h4></div>
+            <div class="client-card"><h4>政府机关</h4></div>
+            <div class="client-card"><h4>医疗卫生</h4></div>
+            <div class="client-card"><h4>企事业单位</h4></div>
+            <div class="client-card"><h4>商业客户</h4></div>
+        </div>
+    </div>
+</section>
+
+<!-- ⑦ 精选案例 → 已按你要求排序：文化类优先 -->
 <section class="section" id="case">
     <div class="container">
         <h2 class="section-title">精选案例</h2>
         <p class="section-sub">点击分类封面，查看该品类全部实拍案例</p>
         <div class="case-grid">
+            <div class="case-item" data-type="school"><img src="images/校园文化.jpg"><div class="case-text">校园文化</div></div>
+            <div class="case-item" data-type="party"><img src="images/党建文化.jpg"><div class="case-text">党建文化</div></div>
+            <div class="case-item" data-type="culture"><img src="images/企业文化.jpg"><div class="case-text">企业文化</div></div>
+            <div class="case-item" data-type="led"><img src="images/LED显示工程.jpg"><div class="case-text">LED显示工程</div></div>
+            <div class="case-item" data-type="aluminum"><img src="images/铝板幕墙.jpg"><div class="case-text">铝板幕墙</div></div>
+            <div class="case-item" data-type="light"><img src="images/亮化工程.jpg"><div class="case-text">亮化工程</div></div>
             <div class="case-item" data-type="store"><img src="images/门头店招.jpg"><div class="case-text">门头店招</div></div>
             <div class="case-item" data-type="lightbox"><img src="images/灯箱发光字.jpg"><div class="case-text">灯箱发光字</div></div>
             <div class="case-item" data-type="guide"><img src="images/标识导示.jpg"><div class="case-text">标识导示</div></div>
             <div class="case-item" data-type="sign"><img src="images/标牌其它.jpg"><div class="case-text">标牌其它</div></div>
-            <div class="case-item" data-type="led"><img src="images/LED显示工程.jpg"><div class="case-text">LED显示工程</div></div>
-            <div class="case-item" data-type="light"><img src="images/亮化工程.jpg"><div class="case-text">亮化工程</div></div>
-            <div class="case-item" data-type="aluminum"><img src="images/铝板幕墙.jpg"><div class="case-text">铝板幕墙</div></div>
-            <div class="case-item" data-type="school"><img src="images/校园文化.jpg"><div class="case-text">校园文化</div></div>
-            <div class="case-item" data-type="party"><img src="images/党建文化.jpg"><div class="case-text">党建文化</div></div>
-            <div class="case-item" data-type="culture"><img src="images/企业文化.jpg"><div class="case-text">企业文化</div></div>
             <div class="case-item" data-type="material"><img src="images/宣传物料.jpg"><div class="case-text">宣传物料</div></div>
         </div>
     </div>
 </section>
 
-<!-- 企业优势 -->
+<!-- ⑧ 施工现场 → 新增 -->
+<section class="section site" id="site">
+    <div class="container">
+        <h2 class="section-title">施工现场</h2>
+        <p class="section-sub">真实施工场景，看得见的专业实力</p>
+        <div class="site-grid">
+            <div class="site-item"><img src="施工现场/1.jpg"></div>
+            <div class="site-item"><img src="施工现场/2.jpg"></div>
+            <div class="site-item"><img src="施工现场/3.jpg"></div>
+            <div class="site-item"><img src="施工现场/4.jpg"></div>
+            <div class="site-item"><img src="施工现场/5.jpg"></div>
+            <div class="site-item"><img src="施工现场/6.jpg"></div>
+        </div>
+    </div>
+</section>
+
+<!-- ⑨ 为什么选择白云朵朵 → 已改标题 -->
 <section class="section advantage" id="advantage">
     <div class="container">
-        <h2 class="section-title">企业优势</h2>
+        <h2 class="section-title">为什么选择白云朵朵</h2>
         <div class="adv-grid">
-            <div class="adv-item">
-                <h4>24年行业积淀</h4>
-                <p>始于2002年白云雕刻，长期深耕广告与文化建设领域。</p>
-            </div>
-            <div class="adv-item">
-                <h4>设计制作施工一体化</h4>
-                <p>从方案设计到项目落地，全流程高效服务。</p>
-            </div>
-            <div class="adv-item">
-                <h4>丰富项目经验</h4>
-                <p>覆盖学校、政府、医院及企事业单位客户。</p>
-            </div>
-            <div class="adv-item">
-                <h4>完善售后服务</h4>
-                <p>快速响应，长期维护，重质量、重信誉。</p>
-            </div>
+            <div class="adv-item"><h4>24年行业积淀</h4><p>始于2002年白云雕刻，长期深耕广告与文化建设领域。</p></div>
+            <div class="adv-item"><h4>设计制作施工一体化</h4><p>从方案设计到项目落地，全流程高效服务。</p></div>
+            <div class="adv-item"><h4>丰富项目经验</h4><p>覆盖学校、政府、医院及企事业单位客户。</p></div>
+            <div class="adv-item"><h4>完善售后服务</h4><p>快速响应，长期维护，重质量、重信誉。</p></div>
         </div>
     </div>
 </section>
 
 <!-- 弹窗 -->
 <div id="albumModal">
-    <div class="modal-head">
-        <h3 id="albumTitle">案例图集</h3>
-        <span id="closeModal">×</span>
-    </div>
+    <div class="modal-head"><h3 id="albumTitle">案例图集</h3><span id="closeModal">×</span></div>
     <div id="albumBox"></div>
 </div>
 
-<!-- 底部（已填入完整电话+地址） -->
+<!-- ⑩ 联系我们 → 已加引导语 -->
 <footer class="footer" id="footer">
     <div class="container">
         <h3>河北白云朵朵广告有限公司</h3>
+        <p>欢迎来电咨询 · 广告工程｜装饰工程｜LED工程｜文化建设</p>
         <p>咨询电话：15503189556</p>
         <p>公司地址：衡水市桃城区和平路依云湾小区北门</p>
-        <p>广告工程｜装饰工程｜LED工程｜文化建设一站式服务商</p>
     </div>
 </footer>
 
@@ -273,11 +309,7 @@ items.forEach(el=>{
         const d = albumData[el.dataset.type];
         title.innerText = d.title;
         box.innerHTML = "";
-        d.list.forEach(s=>{
-            const img = document.createElement("img");
-            img.src = s;
-            box.appendChild(img);
-        });
+        d.list.forEach(s=>{ const img = document.createElement("img"); img.src = s; box.appendChild(img); });
         modal.style.display = "block";
         document.body.style.overflow = "hidden";
     }
