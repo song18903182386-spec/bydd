@@ -388,31 +388,16 @@ items.forEach(el=>{
         const d = albumData[el.dataset.type];
         title.innerText = d.title;
         box.innerHTML = "";
-        // 第一步：先渲染前6张，立刻显示不等待
-        const firstImgs = d.list.slice(0,6);
-        firstImgs.forEach(s=>{
-            const img = document.createElement("img");
-img.src = s;
-img.loading = "lazy"; 
-            box.appendChild(img);
-        })
+        d.list.forEach(s=>{ 
+            const img = document.createElement("img"); 
+            img.src = s; 
+            img.loading = "lazy";
+            box.appendChild(img); 
+        });
         modal.style.display = "block";
         document.body.style.overflow = "hidden";
-        // 弹窗滚动时，再加载剩下所有图片
-        let loadedFlag = false;
-        box.onscroll = function(){
-            if(loadedFlag) return;
-            loadedFlag = true;
-            const restImgs = d.list.slice(6);
-            restImgs.forEach(s=>{
-                const img = document.createElement("img");
-                img.src = s;
-                box.appendChild(img);
-            })
-        }
     }
 });
-
 closeBtn.onclick = ()=>{modal.style.display="none";document.body.style.overflow="";}
 modal.onclick = e=>e.target===modal&&(modal.style.display="none",document.body.style.overflow="");
 
