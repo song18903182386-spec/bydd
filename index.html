@@ -13,11 +13,13 @@
         .section-title{font-size:34px;text-align:center;color:#0a3474;margin-bottom:12px;}
         .section-sub{text-align:center;color:#555;max-width:900px;margin:0 auto 40px;font-size:16px;line-height:1.8;}
         
-        /* 导航 */
+        /* 导航 新增LOGO图片样式 */
         header{position:fixed;top:0;left:0;width:100%;padding:18px 0;transition:0.3s;z-index:999;}
         header.bg-dark{background:#0a3474;box-shadow:0 2px 10px rgba(0,0,0,0.15);}
         .nav{display:flex;justify-content:space-between;align-items:center;}
-        .logo{color:#fff;font-size:22px;font-weight:bold;}
+        .logo-wrap{display:flex;align-items:center;gap:12px;}
+        .logo-img{height:40px;}
+        .logo-text{color:#fff;font-size:22px;font-weight:bold;}
         .nav-list{display:flex;gap:32px;}
         .nav-list a{color:#fff;font-size:15px;}
         
@@ -62,7 +64,7 @@
         .client-card{background:#f5f7fa;padding:24px;border-radius:8px;}
         .client-card h4{font-size:16px;color:#0a3474;}
 
-        /* 案例 排序已调整：文化类优先 */
+        /* 案例 排序已调整：文化类优先，匹配你截图文件名 */
         .case-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:20px;}
         .case-item{cursor:pointer;border-radius:8px;overflow:hidden;background:#f5f7fa;}
         .case-item img{width:100%;height:160px;object-fit:cover;display:block;}
@@ -94,10 +96,13 @@
 </head>
 <body>
 
-<!-- 导航 -->
+<!-- 导航栏：新增调用 images/logo.png 图片LOGO -->
 <header id="header">
     <div class="container nav">
-        <div class="logo">河北白云朵朵广告有限公司</div>
+        <div class="logo-wrap">
+            <img class="logo-img" src="images/logo.png" alt="河北白云朵朵广告LOGO">
+            <div class="logo-text">河北白云朵朵广告有限公司</div>
+        </div>
         <ul class="nav-list">
             <li><a href="#hero">首页</a></li>
             <li><a href="#service">核心业务</a></li>
@@ -113,7 +118,7 @@
     </div>
 </header>
 
-<!-- ① 首页轮播 → 已加定位小字 -->
+<!-- ① 首页轮播 → 已加定位小字，banner图完全匹配你截图文件名 -->
 <section class="hero" id="hero">
     <div class="hero-slide active"><img src="images/banner01.jpg"></div>
     <div class="hero-slide"><img src="images/banner02.jpg"></div>
@@ -179,7 +184,7 @@
                 <p>公司坚持“创意与品质并重，设计与落地同行”，形成设计策划、生产制作、工程施工及售后服务一体化体系，持续为政府机关、学校、医院、企事业单位及商业客户提供专业、高效、可靠的整体解决方案。</p>
             </div>
             <div class="about-img">
-                <img src="images/about.jpg" alt="公司实力">
+                <img src="images/门头店招.jpg" alt="公司施工实景">
             </div>
         </div>
     </div>
@@ -217,7 +222,7 @@
     </div>
 </section>
 
-<!-- ⑦ 精选案例 → 已按你要求排序：文化类优先 -->
+<!-- ⑦ 精选案例 → 匹配你截图里全部jpg文件名，文化类优先 -->
 <section class="section" id="case">
     <div class="container">
         <h2 class="section-title">精选案例</h2>
@@ -238,7 +243,7 @@
     </div>
 </section>
 
-<!-- ⑧ 施工现场 → 新增 -->
+<!-- ⑧ 施工现场 → 新增，后续上传6张施工图到施工现场文件夹即可显示 -->
 <section class="section site" id="site">
     <div class="container">
         <h2 class="section-title">施工现场</h2>
@@ -273,7 +278,7 @@
     <div id="albumBox"></div>
 </div>
 
-<!-- ⑩ 联系我们 → 已加引导语 -->
+<!-- ⑩ 联系我们 → 已加引导语，完整电话地址 -->
 <footer class="footer" id="footer">
     <div class="container">
         <h3>河北白云朵朵广告有限公司</h3>
