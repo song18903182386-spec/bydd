@@ -88,10 +88,14 @@
         .case-item{cursor:pointer;border-radius:8px;overflow:hidden;background:#f5f7fa;}
         .case-item img{width:100%;height:150px;object-fit:cover;display:block;}
         .case-text{padding:10px;text-align:center;font-weight:500;font-size:14px;}
-
-        /* 施工现场 */
-        .site{background:#f8f9fa;}
-        .site-item img{width:100%;height:180px;object-fit:cover;border-radius:8px;}
+       /* 施工现场 */
+    .site{background:#f8f9fa;}
+    .site-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(150px,1fr));
+    gap:16px;
+}
+.site-item img{width:100%;height:180px;object-fit:cover;border-radius:8px;}
 
         /* 优势卡片 */
         .adv-item{background:#f5f7fa;padding:22px;border-radius:8px;text-align:center;}
