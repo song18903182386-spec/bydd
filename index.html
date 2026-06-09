@@ -2,107 +2,149 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 强制标准移动端适配 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>河北白云朵朵广告有限公司 - 广告工程·装饰工程·LED工程·文化建设综合服务商</title>
     <style>
         *{margin:0;padding:0;box-sizing:border-box;font-family:Microsoft YaHei,sans-serif;}
         a{text-decoration:none;color:inherit;}
         li{list-style:none;}
-        .container{width:92%;max-width:1200px;margin:0 auto;}
-        .section{padding:70px 0;}
-        .section-title{font-size:34px;text-align:center;color:#0a3474;margin-bottom:12px;}
-        .section-sub{text-align:center;color:#555;max-width:900px;margin:0 auto 40px;font-size:16px;line-height:1.8;}
+        img{max-width:100%;display:block;}
+        .container{width:94%;max-width:1200px;margin:0 auto;}
+        .section{padding:50px 0;}
+        .section-title{font-size:30px;text-align:center;color:#0a3474;margin-bottom:10px;}
+        .section-sub{text-align:center;color:#555;max-width:900px;margin:0 auto 30px;font-size:15px;line-height:1.7;}
         
-        /* 导航 新增LOGO图片样式 */
-        header{position:fixed;top:0;left:0;width:100%;padding:18px 0;transition:0.3s;z-index:999;}
+        /* ========== 导航栏 手机汉堡菜单 ========== */
+        header{position:fixed;top:0;left:0;width:100%;padding:14px 0;transition:0.3s;z-index:999;}
         header.bg-dark{background:#0a3474;box-shadow:0 2px 10px rgba(0,0,0,0.15);}
         .nav{display:flex;justify-content:space-between;align-items:center;}
-        .logo-wrap{display:flex;align-items:center;gap:12px;}
-        .logo-img{height:40px;}
-        .logo-text{color:#fff;font-size:22px;font-weight:bold;}
-        .nav-list{display:flex;gap:32px;}
-        .nav-list a{color:#fff;font-size:15px;}
-        
-        /* 首屏 遮罩+文字清晰 */
-        .hero{height:100vh;position:relative;overflow:hidden;}
+        .logo-wrap{display:flex;align-items:center;gap:10px;}
+        .logo-img{height:36px;}
+        .logo-text{color:#fff;font-size:20px;font-weight:bold;}
+        /* 桌面导航 */
+        .nav-list{display:flex;gap:24px;}
+        .nav-list a{color:#fff;font-size:14px;white-space:nowrap;}
+        /* 汉堡按钮 手机显示 */
+        .menu-btn{display:none;color:#fff;font-size:28px;cursor:pointer;}
+        /* 移动端下拉菜单 */
+        .mobile-nav{
+            display:none;
+            position:absolute;
+            top:100%;
+            left:0;
+            width:100%;
+            background:#0a3474;
+            padding:20px;
+        }
+        .mobile-nav li{margin:12px 0;text-align:center;}
+        .mobile-nav a{color:#fff;font-size:16px;}
+
+        /* ========== 首屏轮播 手机字号缩小 ========== */
+        .hero{height:100vh;min-height:600px;position:relative;overflow:hidden;}
         .hero-slide{position:absolute;inset:0;opacity:0;transition:1s;}
         .hero-slide.active{opacity:1;}
         .hero-slide img{width:100%;height:100%;object-fit:cover;}
         .hero-mask{position:absolute;inset:0;background:rgba(0,0,0,0.55);z-index:1;}
-        .hero-inner{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;color:#fff;width:90%;max-width:900px;z-index:2;}
-        .hero-company{font-size:20px;margin-bottom:10px;}
-        .hero-tag{font-size:17px;margin:10px 0;opacity:0.98;}
-        .hero-title{font-family:"Microsoft YaHei";font-weight:700;font-size:44px;margin:20px 0;line-height:1.3;}
-        .hero-desc{font-size:16px;margin-top:12px;opacity:0.95;}
+        .hero-inner{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;color:#fff;width:92%;max-width:900px;z-index:2;}
+        .hero-company{font-size:18px;margin-bottom:8px;}
+        .hero-tag{font-size:16px;margin:8px 0;opacity:0.98;}
+        .hero-title{font-family:"Microsoft YaHei";font-weight:700;font-size:36px;margin:16px 0;line-height:1.3;}
+        .hero-desc{font-size:15px;margin-top:10px;opacity:0.95;}
 
-        /* 核心业务 */
-        .service-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:24px;}
-        .service-card{background:#f5f7fa;padding:28px;border-radius:8px;}
-        .service-card h3{font-size:20px;color:#0a3474;margin-bottom:10px;}
-        .service-card p{font-size:15px;color:#555;line-height:1.7;}
+        /* ========== 网格通用 手机自动1列 ========== */
+        .service-grid, .data-grid, .client-grid, .adv-grid, .case-grid, .site-grid{
+            display:grid;
+            grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
+            gap:20px;
+        }
+        /* 业务卡片 */
+        .service-card{background:#f5f7fa;padding:22px;border-radius:8px;}
+        .service-card h3{font-size:18px;color:#0a3474;margin-bottom:8px;}
+        .service-card p{font-size:14px;color:#555;line-height:1.7;}
 
         /* 数字实力 */
         .data{background:#f8f9fa;}
-        .data-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;text-align:center;}
-        .data-item h3{font-size:36px;color:#0a3474;font-weight:bold;margin-bottom:6px;}
-        .data-item p{font-size:16px;color:#555;}
+        .data-item h3{font-size:32px;color:#0a3474;font-weight:bold;margin-bottom:4px;}
+        .data-item p{font-size:15px;color:#555;}
 
-        /* 关于我们 左右布局 */
-        .about-wrap{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;}
-        .about-text p{font-size:16px;line-height:1.9;color:#444;margin-bottom:16px;}
-        .about-img img{width:100%;border-radius:8px;object-fit:cover;height:360px;}
+        /* ========== 关于我们 手机上下堆叠 ========== */
+        .about-wrap{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center;}
+        .about-text p{font-size:15px;line-height:1.8;color:#444;margin-bottom:14px;}
+        .about-img img{width:100%;border-radius:8px;object-fit:cover;height:320px;}
 
-        /* 时间轴历程 */
-        .timeline{max-width:900px;margin:0 auto;position:relative;padding-left:40px;}
-        .timeline::before{content:'';position:absolute;left:10px;top:0;bottom:0;width:2px;background:#0a3474;opacity:0.3;}
-        .t-item{position:relative;margin-bottom:30px;padding-left:30px;}
-        .t-year{font-size:20px;font-weight:bold;color:#0a3474;margin-bottom:6px;}
-        .t-text{font-size:15px;color:#555;}
+        /* 时间轴 */
+        .timeline{max-width:900px;margin:0 auto;position:relative;padding-left:30px;}
+        .timeline::before{content:'';position:absolute;left:8px;top:0;bottom:0;width:2px;background:#0a3474;opacity:0.3;}
+        .t-item{position:relative;margin-bottom:24px;padding-left:24px;}
+        .t-year{font-size:18px;font-weight:bold;color:#0a3474;margin-bottom:4px;}
+        .t-text{font-size:14px;color:#555;}
 
-        /* 服务客户 图标卡片 */
-        .client-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:20px;text-align:center;}
-        .client-card{background:#f5f7fa;padding:24px;border-radius:8px;}
-        .client-card h4{font-size:16px;color:#0a3474;}
+        /* 客户卡片 */
+        .client-card{background:#f5f7fa;padding:20px;border-radius:8px;}
+        .client-card h4{font-size:15px;color:#0a3474;}
 
-        /* 案例 排序已调整：文化类优先，匹配你截图文件名 */
-        .case-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:20px;}
+        /* 案例卡片 */
         .case-item{cursor:pointer;border-radius:8px;overflow:hidden;background:#f5f7fa;}
-        .case-item img{width:100%;height:160px;object-fit:cover;display:block;}
-        .case-text{padding:12px;text-align:center;font-weight:500;}
+        .case-item img{width:100%;height:150px;object-fit:cover;display:block;}
+        .case-text{padding:10px;text-align:center;font-weight:500;font-size:14px;}
 
         /* 施工现场 */
         .site{background:#f8f9fa;}
-        .site-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
-        .site-item img{width:100%;height:200px;object-fit:cover;border-radius:8px;}
+        .site-item img{width:100%;height:180px;object-fit:cover;border-radius:8px;}
 
-        /* 企业优势 */
-        .adv-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
-        .adv-item{background:#f5f7fa;padding:28px;border-radius:8px;text-align:center;}
-        .adv-item h4{font-size:18px;color:#0a3474;margin-bottom:10px;}
+        /* 优势卡片 */
+        .adv-item{background:#f5f7fa;padding:22px;border-radius:8px;text-align:center;}
+        .adv-item h4{font-size:17px;color:#0a3474;margin-bottom:8px;}
         .adv-item p{font-size:14px;color:#555;line-height:1.6;}
 
         /* 弹窗 */
-        #albumModal{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.9);z-index:9999;padding:40px 20px;overflow:auto;}
-        .modal-head{max-width:1200px;margin:0 auto 20px;display:flex;justify-content:space-between;align-items:center;color:#fff;}
-        #closeModal{font-size:36px;cursor:pointer;}
-        #albumBox{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;}
+        #albumModal{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.9);z-index:9999;padding:30px 15px;overflow:auto;}
+        .modal-head{max-width:1200px;margin:0 auto 16px;display:flex;justify-content:space-between;align-items:center;color:#fff;}
+        #closeModal{font-size:32px;cursor:pointer;}
+        #albumBox{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px;}
         #albumBox img{width:100%;border-radius:6px;}
 
         /* 底部 */
-        .footer{background:#0a3474;color:#fff;text-align:center;padding:50px 0;}
-        .footer h3{font-size:26px;margin-bottom:16px;}
-        .footer p{font-size:16px;line-height:2;}
+        .footer{background:#0a3474;color:#fff;text-align:center;padding:40px 0;}
+        .footer h3{font-size:24px;margin-bottom:12px;}
+        .footer p{font-size:15px;line-height:1.9;}
+
+        /* ========== 手机媒体查询 <768px ========== */
+        @media screen and (max-width:768px){
+            /* 导航切换汉堡 */
+            .nav-list{display:none;}
+            .menu-btn{display:block;}
+            /* 所有网格全部单列 */
+            .service-grid, .data-grid, .client-grid, .adv-grid, .case-grid, .site-grid{
+                grid-template-columns:1fr;
+            }
+            /* 关于我们上下排布 */
+            .about-wrap{grid-template-columns:1fr;}
+            .about-img img{height:260px;}
+            /* 首屏标题缩小 */
+            .hero-title{font-size:28px;}
+            /* 板块内边距压缩 */
+            .section{padding:40px 0;}
+            .section-title{font-size:26px;}
+            /* 时间轴缩进缩小 */
+            .timeline{padding-left:20px;}
+            .t-item{padding-left:18px;}
+            /* 弹窗图片更小列宽 */
+            #albumBox{grid-template-columns:repeat(2,1fr);}
+        }
     </style>
 </head>
 <body>
 
-<!-- 导航栏：新增调用 images/logo.png 图片LOGO -->
+<!-- 导航栏（新增手机汉堡菜单） -->
 <header id="header">
     <div class="container nav">
         <div class="logo-wrap">
             <img class="logo-img" src="images/logo.png" alt="河北白云朵朵广告LOGO">
-            <div class="logo-text">河北白云朵朵广告有限公司</div>
+            <div class="logo-text">白云朵朵广告</div>
         </div>
+        <!-- 桌面导航 -->
         <ul class="nav-list">
             <li><a href="#hero">首页</a></li>
             <li><a href="#service">核心业务</a></li>
@@ -115,10 +157,25 @@
             <li><a href="#advantage">为什么选择我们</a></li>
             <li><a href="#footer">联系我们</a></li>
         </ul>
+        <!-- 手机汉堡按钮 -->
+        <div class="menu-btn" id="menuBtn">☰</div>
     </div>
+    <!-- 手机下拉菜单 -->
+    <ul class="mobile-nav" id="mobileNav">
+        <li><a href="#hero">首页</a></li>
+        <li><a href="#service">核心业务</a></li>
+        <li><a href="#data">数字实力</a></li>
+        <li><a href="#about">关于我们</a></li>
+        <li><a href="#history">发展历程</a></li>
+        <li><a href="#client">服务客户</a></li>
+        <li><a href="#case">精选案例</a></li>
+        <li><a href="#site">施工现场</a></li>
+        <li><a href="#advantage">为什么选择我们</a></li>
+        <li><a href="#footer">联系我们</a></li>
+    </ul>
 </header>
 
-<!-- ① 首页轮播 → 已加定位小字，banner图完全匹配你截图文件名 -->
+<!-- ① 首页轮播 -->
 <section class="hero" id="hero">
     <div class="hero-slide active"><img src="images/banner01.jpg"></div>
     <div class="hero-slide"><img src="images/banner02.jpg"></div>
@@ -136,7 +193,7 @@
     </div>
 </section>
 
-<!-- ② 核心业务领域 → 已改标题 -->
+<!-- ② 核心业务领域 -->
 <section class="section service" id="service">
     <div class="container">
         <h2 class="section-title">核心业务领域</h2>
@@ -160,7 +217,7 @@
     </div>
 </section>
 
-<!-- ③ 数字见证实力 → 新增 -->
+<!-- ③ 数字见证实力 -->
 <section class="section data" id="data">
     <div class="container">
         <h2 class="section-title">数字见证实力</h2>
@@ -173,7 +230,7 @@
     </div>
 </section>
 
-<!-- ④ 关于我们 → 左右布局 -->
+<!-- ④ 关于我们 -->
 <section class="section" id="about">
     <div class="container">
         <h2 class="section-title">关于我们</h2>
@@ -190,7 +247,7 @@
     </div>
 </section>
 
-<!-- ⑤ 发展历程 → 时间轴 -->
+<!-- ⑤ 发展历程时间轴 -->
 <section class="section" id="history">
     <div class="container">
         <h2 class="section-title">发展历程</h2>
@@ -207,7 +264,7 @@
     </div>
 </section>
 
-<!-- ⑥ 服务客户 → 5个卡片 -->
+<!-- ⑥ 服务客户 -->
 <section class="section" id="client">
     <div class="container">
         <h2 class="section-title">服务客户</h2>
@@ -222,7 +279,7 @@
     </div>
 </section>
 
-<!-- ⑦ 精选案例 → 匹配你截图里全部jpg文件名，文化类优先 -->
+<!-- ⑦ 精选案例（文化类优先） -->
 <section class="section" id="case">
     <div class="container">
         <h2 class="section-title">精选案例</h2>
@@ -243,7 +300,7 @@
     </div>
 </section>
 
-<!-- ⑧ 施工现场 → 新增，后续上传6张施工图到施工现场文件夹即可显示 -->
+<!-- ⑧ 施工现场 -->
 <section class="section site" id="site">
     <div class="container">
         <h2 class="section-title">施工现场</h2>
@@ -259,7 +316,7 @@
     </div>
 </section>
 
-<!-- ⑨ 为什么选择白云朵朵 → 已改标题 -->
+<!-- ⑨ 为什么选择白云朵朵 -->
 <section class="section advantage" id="advantage">
     <div class="container">
         <h2 class="section-title">为什么选择白云朵朵</h2>
@@ -272,13 +329,13 @@
     </div>
 </section>
 
-<!-- 弹窗 -->
+<!-- 图集弹窗 -->
 <div id="albumModal">
     <div class="modal-head"><h3 id="albumTitle">案例图集</h3><span id="closeModal">×</span></div>
     <div id="albumBox"></div>
 </div>
 
-<!-- ⑩ 联系我们 → 已加引导语，完整电话地址 -->
+<!-- ⑩ 联系我们 -->
 <footer class="footer" id="footer">
     <div class="container">
         <h3>河北白云朵朵广告有限公司</h3>
@@ -289,6 +346,18 @@
 </footer>
 
 <script>
+// 手机汉堡菜单切换
+const menuBtn = document.getElementById("menuBtn");
+const mobileNav = document.getElementById("mobileNav");
+menuBtn.onclick = ()=>{
+    mobileNav.style.display = mobileNav.style.display === "block" ? "none" : "block";
+}
+// 点击导航链接自动关闭手机菜单
+document.querySelectorAll(".mobile-nav a").forEach(link=>{
+    link.onclick = ()=> mobileNav.style.display = "none";
+})
+
+// 案例图集弹窗逻辑
 const albumData = {
     store:{title:"门头店招",list:Array.from({length:40},(_,i)=>`images/门头店招/mentou (${i+1}).jpg`)},
     lightbox:{title:"灯箱发光字",list:Array.from({length:40},(_,i)=>`images/灯箱发光字/zi (${i+1}).jpg`)},
@@ -323,11 +392,13 @@ items.forEach(el=>{
 closeBtn.onclick = ()=>{modal.style.display="none";document.body.style.overflow="";}
 modal.onclick = e=>e.target===modal&&(modal.style.display="none",document.body.style.overflow="");
 
+// 导航滚动变色
 window.onscroll = ()=>{
     const h = document.getElementById("header");
     window.scrollY>50 ? h.classList.add("bg-dark") : h.classList.remove("bg-dark");
 };
 
+// 首屏自动轮播
 const slides = document.querySelectorAll(".hero-slide");
 let i=0;
 setInterval(()=>{slides[i].classList.remove("active");i=(i+1)%slides.length;slides[i].classList.add("active");},5000);
