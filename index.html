@@ -2,7 +2,6 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <!-- 强制标准移动端适配 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>河北白云朵朵广告有限公司 - 广告工程·装饰工程·LED工程·文化建设综合服务商</title>
     <style>
@@ -15,19 +14,15 @@
         .section-title{font-size:30px;text-align:center;color:#0a3474;margin-bottom:10px;}
         .section-sub{text-align:center;color:#555;max-width:900px;margin:0 auto 30px;font-size:15px;line-height:1.7;}
         
-        /* ========== 导航栏 手机汉堡菜单 ========== */
         header{position:fixed;top:0;left:0;width:100%;padding:14px 0;transition:0.3s;z-index:999;}
         header.bg-dark{background:#0a3474;box-shadow:0 2px 10px rgba(0,0,0,0.15);}
         .nav{display:flex;justify-content:space-between;align-items:center;}
         .logo-wrap{display:flex;align-items:center;gap:10px;}
         .logo-img{height:36px;}
         .logo-text{color:#fff;font-size:20px;font-weight:bold;}
-        /* 桌面导航 */
         .nav-list{display:flex;gap:24px;}
         .nav-list a{color:#fff;font-size:14px;white-space:nowrap;}
-        /* 汉堡按钮 手机显示 */
         .menu-btn{display:none;color:#fff;font-size:28px;cursor:pointer;}
-        /* 移动端下拉菜单 */
         .mobile-nav{
             display:none;
             position:absolute;
@@ -40,7 +35,6 @@
         .mobile-nav li{margin:12px 0;text-align:center;}
         .mobile-nav a{color:#fff;font-size:16px;}
 
-        /* ========== 首屏轮播 手机字号缩小 ========== */
         .hero{height:100vh;min-height:600px;position:relative;overflow:hidden;}
         .hero-slide{position:absolute;inset:0;opacity:0;transition:1s;}
         .hero-slide.active{opacity:1;}
@@ -52,55 +46,51 @@
         .hero-title{font-family:"Microsoft YaHei";font-weight:700;font-size:36px;margin:16px 0;line-height:1.3;}
         .hero-desc{font-size:15px;margin-top:10px;opacity:0.95;}
 
-        /* ========== 网格通用 手机自动1列 ========== */
-        .service-grid, .data-grid, .client-grid, .adv-grid, .case-grid{
+        /* 正常网格布局 - 电脑多列 */
+        .service-grid,
+        .data-grid,
+        .client-grid,
+        .adv-grid,
+        .case-grid {
             display:grid;
             grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
             gap:20px;
         }
-        /* 施工现场独立自适应布局 */
+
         .site-grid{
             display:grid;
             grid-template-columns:repeat(auto-fill,minmax(150px,1fr));
             gap:16px;
         }
 
-        /* 业务卡片 */
         .service-card{background:#f5f7fa;padding:22px;border-radius:8px;}
         .service-card h3{font-size:18px;color:#0a3474;margin-bottom:8px;}
         .service-card p{font-size:14px;color:#555;line-height:1.7;}
 
-        /* 数字实力 */
         .data{background:#f8f9fa;}
         .data-item h3{font-size:32px;color:#0a3474;font-weight:bold;margin-bottom:4px;}
         .data-item p{font-size:15px;color:#555;}
 
-        /* ========== 关于我们 手机上下堆叠 ========== */
         .about-wrap{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center;}
         .about-text p{font-size:15px;line-height:1.8;color:#444;margin-bottom:14px;}
         .about-img img{width:100%;border-radius:8px;object-fit:cover;height:320px;}
 
-        /* 时间轴 */
         .timeline{max-width:900px;margin:0 auto;position:relative;padding-left:30px;}
         .timeline::before{content:'';position:absolute;left:8px;top:0;bottom:0;width:2px;background:#0a3474;opacity:0.3;}
         .t-item{position:relative;margin-bottom:24px;padding-left:24px;}
         .t-year{font-size:18px;font-weight:bold;color:#0a3474;margin-bottom:4px;}
         .t-text{font-size:14px;color:#555;}
 
-        /* 客户卡片 */
         .client-card{background:#f5f7fa;padding:20px;border-radius:8px;}
         .client-card h4{font-size:15px;color:#0a3474;}
 
-        /* 案例卡片 */
         .case-item{cursor:pointer;border-radius:8px;overflow:hidden;background:#f5f7fa;}
         .case-item img{width:100%;height:150px;object-fit:cover;display:block;}
         .case-text{padding:10px;text-align:center;font-weight:500;font-size:14px;}
         
-        /* 施工现场 */
         .site{background:#f8f9fa;}
         .site-item img{width:100%;height:180px;object-fit:cover;border-radius:8px;}
 
-        /* 优势卡片 */
         .adv-item{background:#f5f7fa;padding:22px;border-radius:8px;text-align:center;}
         .adv-item h4{font-size:17px;color:#0a3474;margin-bottom:8px;}
         .adv-item p{font-size:14px;color:#555;line-height:1.6;}
@@ -112,46 +102,44 @@
         #albumBox{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fill,minmax(400px,1fr));gap:12px;}
         #albumBox img{width:100%;border-radius:6px;}
 
-        /* 底部 */
         .footer{background:#0a3474;color:#fff;text-align:center;padding:40px 0;}
         .footer h3{font-size:24px;margin-bottom:12px;}
         .footer p{font-size:15px;line-height:1.9;}
 
-        /* ========== 手机媒体查询 <768px ========== */
+        /* 手机样式 —— 只对手机生效！不再影响电脑！ */
         @media screen and (max-width:768px){
-            /* 导航切换汉堡 */
             .nav-list{display:none;}
             .menu-btn{display:block;}
-            /* 所有网格全部单列（排除施工现场） */
-            .service-grid, .data-grid, .client-grid, .adv-grid, .case-grid{
+            
+            /* 只在手机端变成单列，不影响电脑 */
+            .service-grid,
+            .data-grid,
+            .client-grid,
+            .adv-grid,
+            .case-grid {
                 grid-template-columns:1fr;
             }
-            /* 关于我们上下排布 */
+
             .about-wrap{grid-template-columns:1fr;}
             .about-img img{height:260px;}
-            /* 首屏标题缩小 */
             .hero-title{font-size:28px;}
-            /* 板块内边距压缩 */
             .section{padding:40px 0;}
             .section-title{font-size:26px;}
-            /* 时间轴缩进缩小 */
             .timeline{padding-left:20px;}
             .t-item{padding-left:18px;}
-            /* 手机弹窗图片大小与列宽 */
             #albumBox{grid-template-columns:repeat(2,1fr);}
         }
     </style>
 </head>
 <body>
 
-<!-- 导航栏（新增手机汉堡菜单） -->
+<!-- 导航栏 -->
 <header id="header">
     <div class="container nav">
         <div class="logo-wrap">
-            <img class="logo-img" src="images/logo.png" alt="河北白云朵朵广告LOGO">
-            <div class="logo-text">白云朵朵广告15503189556</div>
+            <img class="logo-img" src="images/logo.png" alt="LOGO">
+            <div class="logo-text">白云朵朵广告</div>
         </div>
-        <!-- 桌面导航 -->
         <ul class="nav-list">
             <li><a href="#hero">首页</a></li>
             <li><a href="#service">核心业务</a></li>
@@ -164,10 +152,8 @@
             <li><a href="#advantage">为什么选择我们</a></li>
             <li><a href="#footer">联系我们</a></li>
         </ul>
-        <!-- 手机汉堡按钮 -->
         <div class="menu-btn" id="menuBtn">☰</div>
     </div>
-    <!-- 手机下拉菜单 -->
     <ul class="mobile-nav" id="mobileNav">
         <li><a href="#hero">首页</a></li>
         <li><a href="#service">核心业务</a></li>
@@ -182,7 +168,7 @@
     </ul>
 </header>
 
-<!-- ① 首页轮播 -->
+<!-- 轮播 -->
 <section class="hero" id="hero">
     <div class="hero-slide active"><img src="images/banner01.jpg"></div>
     <div class="hero-slide"><img src="images/banner02.jpg"></div>
@@ -200,14 +186,11 @@
     </div>
 </section>
 
-<!-- ② 核心业务领域 -->
+<!-- 业务 -->
 <section class="section service" id="service">
     <div class="container">
         <h2 class="section-title">核心业务领域</h2>
-        <p class="section-sub">
-            从广告标识到文化建设，从设计策划到工程施工，<br>
-            为客户提供一站式综合服务解决方案。
-        </p>
+        <p class="section-sub">从广告标识到文化建设，从设计策划到工程施工，<br>为客户提供一站式综合服务解决方案。</p>
         <div class="service-grid">
             <div class="service-card"><h3>门头店招</h3><p>商业门头、连锁店招、企业形象门头、LED发光门头、户外品牌招牌</p></div>
             <div class="service-card"><h3>灯箱发光字</h3><p>无边发光字、树脂字、卡布灯箱、软膜灯箱、不锈钢背发光字</p></div>
@@ -224,20 +207,20 @@
     </div>
 </section>
 
-<!-- ③ 数字见证实力 -->
+<!-- 实力 -->
 <section class="section data" id="data">
     <div class="container">
         <h2 class="section-title">数字见证实力</h2>
         <div class="data-grid">
             <div class="data-item"><h3>24年</h3><p>行业经验</p></div>
             <div class="data-item"><h3>11大类</h3><p>主营业务</p></div>
-            <div class="data-item"><h3>全流程</h3><p>设计·制作·施工一体化</p></div>
+            <div class="data-item"><h3>全流程</h3<p>设计·制作·施工一体化</p></div>
             <div class="data-item"><h3>全覆盖</h3><p>学校·政府·医院·企业</p></div>
         </div>
     </div>
 </section>
 
-<!-- ④ 关于我们 -->
+<!-- 关于我们 -->
 <section class="section" id="about">
     <div class="container">
         <h2 class="section-title">关于我们</h2>
@@ -248,13 +231,13 @@
                 <p>公司坚持“创意与品质并重，设计与落地同行”，形成设计策划、生产制作、工程施工及售后服务一体化体系，持续为政府机关、学校、医院、企事业单位及商业客户提供专业、高效、可靠的整体解决方案。</p>
             </div>
             <div class="about-img">
-                <img src="images/1.png" alt="公司施工实景">
+                <img src="images/1.png" alt="施工">
             </div>
         </div>
     </div>
 </section>
 
-<!-- ⑤ 发展历程时间轴 -->
+<!-- 历程 -->
 <section class="section" id="history">
     <div class="container">
         <h2 class="section-title">发展历程</h2>
@@ -271,7 +254,7 @@
     </div>
 </section>
 
-<!-- ⑥ 服务客户 -->
+<!-- 客户 -->
 <section class="section" id="client">
     <div class="container">
         <h2 class="section-title">服务客户</h2>
@@ -289,7 +272,7 @@
     </div>
 </section>
 
-<!-- ⑦ 精选案例（文化类优先） -->
+<!-- 案例 -->
 <section class="section" id="case">
     <div class="container">
         <h2 class="section-title">精选案例</h2>
@@ -310,7 +293,7 @@
     </div>
 </section>
 
-<!-- ⑧ 施工现场 -->
+<!-- 施工现场 -->
 <section class="section site" id="site">
     <div class="container">
         <h2 class="section-title">施工现场</h2>
@@ -328,7 +311,7 @@
     </div>
 </section>
 
-<!-- ⑨ 为什么选择白云朵朵 -->
+<!-- 优势 -->
 <section class="section advantage" id="advantage">
     <div class="container">
         <h2 class="section-title">为什么选择白云朵朵</h2>
@@ -341,13 +324,13 @@
     </div>
 </section>
 
-<!-- 图集弹窗 -->
+<!-- 弹窗 -->
 <div id="albumModal">
     <div class="modal-head"><h3 id="albumTitle">案例图集</h3><span id="closeModal">×</span></div>
     <div id="albumBox"></div>
 </div>
 
-<!-- ⑩ 联系我们 -->
+<!-- 底部 -->
 <footer class="footer" id="footer">
     <div class="container">
         <h3>河北白云朵朵广告有限公司</h3>
@@ -358,18 +341,17 @@
 </footer>
 
 <script>
-// 手机汉堡菜单切换
+// 导航
 const menuBtn = document.getElementById("menuBtn");
 const mobileNav = document.getElementById("mobileNav");
 menuBtn.onclick = ()=>{
     mobileNav.style.display = mobileNav.style.display === "block" ? "none" : "block";
 }
-// 点击导航链接自动关闭手机菜单
 document.querySelectorAll(".mobile-nav a").forEach(link=>{
     link.onclick = ()=> mobileNav.style.display = "none";
 })
 
-// 案例图集弹窗逻辑
+// 弹窗 —— 纯净原版，无任何限制！
 const albumData = {
     store:{title:"门头店招",list:Array.from({length:40},(_,i)=>`images/门头店招/mentou (${i+1}).jpg`)},
     lightbox:{title:"灯箱发光字",list:Array.from({length:40},(_,i)=>`images/灯箱发光字/zi (${i+1}).jpg`)},
@@ -404,16 +386,17 @@ items.forEach(el=>{
         document.body.style.overflow = "hidden";
     }
 });
+
 closeBtn.onclick = ()=>{modal.style.display="none";document.body.style.overflow="";}
 modal.onclick = e=>e.target===modal&&(modal.style.display="none",document.body.style.overflow="");
 
-// 导航滚动变色
+// 滚动
 window.onscroll = ()=>{
     const h = document.getElementById("header");
     window.scrollY>50 ? h.classList.add("bg-dark") : h.classList.remove("bg-dark");
 };
 
-// 首屏自动轮播
+// 轮播
 const slides = document.querySelectorAll(".hero-slide");
 let i=0;
 setInterval(()=>{slides[i].classList.remove("active");i=(i+1)%slides.length;slides[i].classList.add("active");},5000);
