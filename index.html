@@ -423,10 +423,15 @@
                 title.innerText = d.title;
                 box.innerHTML = "";
                 d.list.forEach(s=>{ 
-                    const img = document.createElement("img"); 
-                    img.src = s; 
-                    box.appendChild(img); 
-                });
+    const img = document.createElement("img"); 
+    img.src = s;
+    // 点击弹窗里的图片，新页面全屏打开大图
+    img.onclick = (e)=>{
+        e.stopPropagation(); // 阻止点击图片关闭弹窗
+        window.open(img.src, '_blank');
+    };
+    box.appendChild(img); 
+});
                 modal.style.display = "block";
                 document.body.style.overflow = "hidden";
             }
