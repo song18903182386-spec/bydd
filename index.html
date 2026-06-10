@@ -429,11 +429,19 @@
                 document.body.style.overflow = "hidden";
             }
         });
-
-        // 关闭弹窗
-        closeBtn.onclick = ()=>{modal.style.display="none";document.body.style.overflow="";}
-        modal.onclick = e=>e.target===modal&&(modal.style.display="none",document.body.style.overflow="");
-
+// 关闭弹窗（点任意地方都能关）
+function closeModal() {
+  modal.style.display = "none";
+  document.body.style.overflow = "";
+}
+// 点叉号关闭
+closeBtn.onclick = closeModal;
+// 点黑色背景 任意位置 都关闭（手机必生效）
+modal.onclick = closeModal;
+// 不让点图片的时候关掉弹窗（只点黑色背景才关）
+box.onclick = function(e){
+  e.stopPropagation();
+}
         // 4. 滚动页面 → 导航栏变色
         window.onscroll = ()=>{
             const h = document.getElementById("header");
