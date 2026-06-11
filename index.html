@@ -460,5 +460,13 @@ box.onclick = function(e){
         let i=0;
         setInterval(()=>{slides[i].classList.remove("active");i=(i+1)%slides.length;slides[i].classList.add("active");},5000);
     </script>
+    <!-- 访客浏览统计 开始 -->
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div style="text-align:center;margin-top:30px;color:#666;font-size:14px;">
+  <span id="busuanzi_container_site_pv">本站总访问量：<span id="busuanzi_value_site_pv"></span> 次</span>
+  &nbsp;&nbsp;
+  <span id="busuanzi_container_site_uv">本站访客数：<span id="busuanzi_value_site_uv"></span> 人</span>
+</div>
+<!-- 访客浏览统计 结束 -->
 </body>
 </html>
